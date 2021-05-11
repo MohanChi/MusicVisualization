@@ -1,0 +1,7 @@
+﻿  moc src\View\DisplayVideos\DisplayVideosWindow.h
+  DisplayVideosWindow.cpp
+  VideoItem.cpp
+  ThreeChoicesWindow.cpp
+  moc_DisplayVideosWindow.cpp
+  moc_VideoItem.cpp
+  MusicVisualization.vcxproj -> F:\MIProject\MusicVisualization\x64\Debug\MusicVisualization.exe

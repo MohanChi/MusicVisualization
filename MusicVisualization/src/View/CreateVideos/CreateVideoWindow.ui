@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CreateVideoWindow</class>
+ <widget class="QWidget" name="CreateVideoWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>560</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CreateVideoWindow</string>
+  </property>
+  <widget class="QWidget" name="widget_background" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1000</width>
+     <height>560</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(227, 227, 227);</string>
+   </property>
+   <widget class="QPushButton" name="btn_back">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>40</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>60</y>
+      <width>611</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout"/>
+   </widget>
+   <widget class="QSlider" name="horizontalSlider_3">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>100</y>
+      <width>319</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSlider::groove:horizontal {
+background:transparent;
+}
+QSlider::handle:horizontal {
+background: rgb(255,255,255);
+width:8px;
+height:8px;
+border-radius:4px;
+margin-top:7px;
+margin-bottom:7px;
+}
+QSlider::sub-page:horizontal {
+background:rgb(255,255,255);
+margin-top:9px;
+margin-bottom:9px;
+}
+QSlider::add-page:horizontal {
+background: rgb(56,56,56);
+margin-top:9px;
+margin-bottom:9px;
+}
+QSlider::handle:horizontal:pressed {
+background: rgb(255,255,255);
+width:8px;
+height:8px;
+border-radius:4px;
+margin-top:7px;
+margin-bottom:7px;
+}</string>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

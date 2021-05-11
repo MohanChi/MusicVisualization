@@ -52,12 +52,12 @@
     </property>
     <layout class="QVBoxLayout" name="verticalLayout"/>
    </widget>
-   <widget class="QSlider" name="horizontalSlider_3">
+   <widget class="QSlider" name="horizontalSlider">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>40</x>
       <y>100</y>
-      <width>319</width>
+      <width>300</width>
       <height>22</height>
      </rect>
     </property>
@@ -94,6 +94,76 @@ margin-bottom:7px;
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSlider_1">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>150</y>
+      <width>300</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSlider::groove:horizontal {
+background:transparent;
+}
+QSlider::handle:horizontal {
+background: rgb(255,255,255);
+width:8px;
+height:8px;
+border-radius:4px;
+margin-top:7px;
+margin-bottom:7px;
+}
+QSlider::sub-page:horizontal {
+background:rgb(255,255,255);
+margin-top:9px;
+margin-bottom:9px;
+}
+QSlider::add-page:horizontal {
+background: rgb(56,56,56);
+margin-top:9px;
+margin-bottom:9px;
+}
+QSlider::handle:horizontal:pressed {
+background: rgb(255,255,255);
+width:8px;
+height:8px;
+border-radius:4px;
+margin-top:7px;
+margin-bottom:7px;
+}</string>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>120</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>120</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>100</string>
     </property>
    </widget>
   </widget>

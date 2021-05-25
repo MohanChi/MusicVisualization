@@ -107,6 +107,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Model\JsonDataModel.cpp" />
+    <ClCompile Include="src\Model\VideoDataModel.cpp" />
     <ClCompile Include="src\Module\Tables\SqliteManager.cpp" />
     <ClCompile Include="src\Module\Tables\CompletedVideoTable.cpp" />
     <ClCompile Include="src\View\Common\TopWindow.cpp" />
@@ -138,6 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Model\JsonDataModel.h" />
+    <ClInclude Include="src\Model\VideoDataModel.h" />
     <ClInclude Include="src\Module\Tables\CommonData.h" />
     <ClInclude Include="src\Module\Tables\CommonErrorCode.h" />
     <ClInclude Include="src\Module\Tables\SqliteManager.h" />

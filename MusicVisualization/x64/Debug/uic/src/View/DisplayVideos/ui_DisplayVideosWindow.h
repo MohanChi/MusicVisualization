@@ -90,6 +90,7 @@ public:
 "margin-top:7px;\n"
 "margin-bottom:7px;\n"
 "}"));
+        horizontalSlider->setPageStep(1);
         horizontalSlider->setOrientation(Qt::Horizontal);
         btn_modify = new QPushButton(DisplayVideosWindow);
         btn_modify->setObjectName(QString::fromUtf8("btn_modify"));

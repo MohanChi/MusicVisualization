@@ -7,7 +7,9 @@ public:
 	CreateDataModel();
 	~CreateDataModel();
 
+	bool IsFilenameUnique(std::string filename);
 	CreateVideoVec GetAllCreateVideos();
+	void UpdateCreateVideosData(CreateVideo cv);
 
 private:
 

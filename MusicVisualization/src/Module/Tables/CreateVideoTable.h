@@ -13,9 +13,9 @@ public:
 
 	std::string GetTableName();
 	DBStatus InsertCreateVideo(CreateVideo Cr);
-	DBStatus DeleteCreateVideo(std::string UID);
-	DBStatus UpdateCreateVideo(std::string UID, CreateVideo new_Cr);
-	CreateVideo SelectCreateVideo(std::string UID);
+	DBStatus DeleteCreateVideo(std::string filename);
+	DBStatus UpdateCreateVideo(CreateVideo new_Cr);
+	CreateVideo SelectCreateVideo(std::string filename);
 	CreateVideoVec SelectAllCreateVideos();
 private:
 

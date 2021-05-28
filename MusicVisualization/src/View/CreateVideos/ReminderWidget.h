@@ -11,6 +11,8 @@ public:
 	ReminderWidget(QWidget *parent);
 	~ReminderWidget();
 
+	void SetLabelText(QString text);
+
 private:
 	void InitializeUI();
 

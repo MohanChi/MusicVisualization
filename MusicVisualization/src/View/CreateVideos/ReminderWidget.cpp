@@ -14,6 +14,11 @@ ReminderWidget::~ReminderWidget()
 {
 }
 
+void ReminderWidget::SetLabelText(QString text)
+{
+	ui.label->setText(text);
+}
+
 void ReminderWidget::InitializeUI()
 {
 	this->setGeometry(parent->width() / 2 - this->width() / 2,

@@ -2,6 +2,7 @@
 #include "ThreeChoices/ThreeChoicesWindow.h"
 #include "CreateVideoWindow.h"
 #include "Common/TopWindow.h"
+#include "../../Model/CreateDataModel.h"
 #include <QDebug>
 
 NewNameWindow* NewNameWindow::m_nnWindow = nullptr;
@@ -40,18 +41,31 @@ void NewNameWindow::slot_OnBtnOKClicked()
 {
 	if (ui.lineEdit->text().isEmpty())
 	{
+		rWidget->SetLabelText("You need to name a new project!!!");
 		rWidget->show();
 	}
-	else
+	else                      
 	{
 		qDebug() << ui.lineEdit->text();
 		qDebug() << ui.lineEdit->text().size();
-		
-		this->setParent(nullptr);
-		this->hide();
-		CreateVideoWindow* cvWindow = CreateVideoWindow::GetInstance();
-		TopWindow* tWindow = TopWindow::GetInstance();
-		cvWindow->setParent(tWindow->GetWidgetContainer());
-		cvWindow->show();
+
+		CreateDataModel cdm;
+		if (cdm.IsFilenameUnique(ui.lineEdit->text().toStdString()))
+		{
+			this->setParent(nullptr);
+			this->hide();
+			CreateVideoWindow* cvWindow = CreateVideoWindow::GetInstance();
+			CreateVideo cv;
+			cv.filename = ui.lineEdit->text().toStdString();
+			cvWindow->SetInitialData(cv);
+			TopWindow* tWindow = TopWindow::GetInstance();
+			cvWindow->setParent(tWindow->GetWidgetContainer());
+			cvWindow->show();
+		}
+		else
+		{
+			rWidget->SetLabelText("You need to change the project name!!!");
+			rWidget->show();
+		}
 	}
 }

@@ -23,6 +23,7 @@ public:
 
 private slots:
 	void slot_OnBtnBackClicked();
+	void slot_OnBtnGenerateClicked();
 	void slot_SliderPulseReact(int value);
 	void slot_SliderMotionReact(int value);
 	void slot_SliderContrastStrength(int value);

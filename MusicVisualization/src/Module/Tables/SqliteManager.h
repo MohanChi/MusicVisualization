@@ -13,6 +13,7 @@ public:
 	DBStatus OpenDB();
 	DBStatus CloseDB();
 	DBStatus Excute(std::string sql);
+	DBResult Select(std::string sql);
 
 private:
 	const char* DBName;

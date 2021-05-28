@@ -64,7 +64,7 @@ DBStatus SqliteManager::CloseDB()
 
 DBStatus SqliteManager::Excute(std::string sql)
 {
-	char* errmsg = 0;
+	char * errmsg = 0;
 	int rc;
 	try
 	{
@@ -79,5 +79,30 @@ DBStatus SqliteManager::Excute(std::string sql)
 	}
 	else {
 		return SQLITE_SUCCESS;
+	}
+}
+
+DBResult SqliteManager::Select(std::string sql)
+{
+	char * errmsg = 0;
+	DBStatus status;
+	DBResult res;
+	try
+	{
+		status = sqlite3_get_table(this->DBHandle,
+			sql.c_str(), &res.result, &res.row,
+			&res.column, &errmsg);
+	}
+	catch (const std::exception& e)
+	{
+		return DBResult();
+	}
+	if (status)
+	{
+		return DBResult();
+	}
+	else
+	{
+		return res;
 	}
 }

@@ -10,3 +10,10 @@ typedef  long  DBStatus;
 #define SQLITE_CLOSED_EXCEPTION               0x00020004
 #define SQLITE_EXCUTE_FALIED                  0x00020006
 #define SQLITE_EXCUTE_EXCEPTION               0x00020006
+
+struct DBResult
+{
+	char **result;
+	int row;
+	int column;
+};

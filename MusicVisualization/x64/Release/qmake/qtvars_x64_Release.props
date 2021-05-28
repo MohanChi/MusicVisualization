@@ -1,8 +1,8 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-<Qt_DEFINES_>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG</Qt_DEFINES_>
-<Qt_INCLUDEPATH_>E:\Qt\5.12.1\msvc2017_64\include;E:\Qt\5.12.1\msvc2017_64\include\QtWidgets;E:\Qt\5.12.1\msvc2017_64\include\QtGui;E:\Qt\5.12.1\msvc2017_64\include\QtANGLE;E:\Qt\5.12.1\msvc2017_64\include\QtCore;C:\VulkanSDK\1.0.51.0\include;E:\Qt\5.12.1\msvc2017_64\mkspecs\win32-msvc</Qt_INCLUDEPATH_>
-<Qt_LIBS_>E:\Qt\5.12.1\msvc2017_64\lib\Qt5Widgets.lib;E:\Qt\5.12.1\msvc2017_64\lib\Qt5Gui.lib;E:\Qt\5.12.1\msvc2017_64\lib\Qt5Core.lib;E:\Qt\5.12.1\msvc2017_64\lib\qtmain.lib;shell32.lib;Qt5Core.lib</Qt_LIBS_>
+<Qt_DEFINES_>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_NO_DEBUG;QT_MULTIMEDIAWIDGETS_LIB;QT_MULTIMEDIA_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;NDEBUG</Qt_DEFINES_>
+<Qt_INCLUDEPATH_>E:\Qt\5.12.1\msvc2017_64\include;E:\Qt\5.12.1\msvc2017_64\include\QtMultimediaWidgets;E:\Qt\5.12.1\msvc2017_64\include\QtMultimedia;E:\Qt\5.12.1\msvc2017_64\include\QtWidgets;E:\Qt\5.12.1\msvc2017_64\include\QtGui;E:\Qt\5.12.1\msvc2017_64\include\QtANGLE;E:\Qt\5.12.1\msvc2017_64\include\QtNetwork;E:\Qt\5.12.1\msvc2017_64\include\QtCore;C:\VulkanSDK\1.0.51.0\include;E:\Qt\5.12.1\msvc2017_64\mkspecs\win32-msvc</Qt_INCLUDEPATH_>
+<Qt_LIBS_>E:\Qt\5.12.1\msvc2017_64\lib\Qt5MultimediaWidgets.lib;E:\Qt\5.12.1\msvc2017_64\lib\Qt5Multimedia.lib;E:\Qt\5.12.1\msvc2017_64\lib\Qt5Widgets.lib;E:\Qt\5.12.1\msvc2017_64\lib\Qt5Gui.lib;E:\Qt\5.12.1\msvc2017_64\lib\Qt5Network.lib;E:\Qt\5.12.1\msvc2017_64\lib\Qt5Core.lib;E:\Qt\5.12.1\msvc2017_64\lib\qtmain.lib;shell32.lib;Qt5Core.lib</Qt_LIBS_>
 <Qt_LIBPATH_>E:\Qt\5.12.1\msvc2017_64\lib;C:\openssl\lib;C:\Utils\my_sql\mysql-5.6.11-winx64\lib;C:\Utils\postgresql\pgsql\lib</Qt_LIBPATH_>
 <QMake_QT_SYSROOT_></QMake_QT_SYSROOT_>
 <QMake_QT_INSTALL_PREFIX_>E:/Qt/5.12.1/msvc2017_64</QMake_QT_INSTALL_PREFIX_>
@@ -30,11 +30,11 @@
 <QMake_QMAKE_VERSION_>3.1</QMake_QMAKE_VERSION_>
 <QMake_QT_VERSION_>5.12.1</QMake_QT_VERSION_>
 <Qt_INCLUDEPATH_
-      >$(Qt_INCLUDEPATH_);x64\Release\moc;x64\Release\moc\src\View\DisplayVideos;x64\Release\moc\src\View\Common;x64\Release\moc\src\View\ThreeChoices;x64\Release\uic;x64\Release\uic\src\View\Common;x64\Release\uic\src\View\DisplayVideos;x64\Release\uic\src\View\ThreeChoices</Qt_INCLUDEPATH_>
+      >$(Qt_INCLUDEPATH_);x64\Release\moc;x64\Release\moc\src\View\ContinueChoose;x64\Release\moc\src\View\CreateVideos;x64\Release\moc\src\View\DisplayVideos;x64\Release\moc\src\View\Common;x64\Release\moc\src\View\ThreeChoices;x64\Release\uic;x64\Release\uic\src\View\Common;x64\Release\uic\src\View\ContinueChoose;x64\Release\uic\src\View\CreateVideos;x64\Release\uic\src\View\DisplayVideos;x64\Release\uic\src\View\ThreeChoices</Qt_INCLUDEPATH_>
     <QtBkup_QtInstall
       >msvc2017_64</QtBkup_QtInstall>
     <QtBkup_QtModules
-      >core;gui;widgets</QtBkup_QtModules>
+      >core;gui;multimedia;multimediawidgets;widgets</QtBkup_QtModules>
     <QtBkup_QtPathBinaries
       >bin</QtBkup_QtPathBinaries>
     <QtBkup_QtPathLibraryExecutables

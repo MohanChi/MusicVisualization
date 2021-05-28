@@ -106,8 +106,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Model\CreateDataModel.cpp" />
     <ClCompile Include="src\Model\JsonDataModel.cpp" />
     <ClCompile Include="src\Model\VideoDataModel.cpp" />
+    <ClCompile Include="src\Module\Tables\CreateVideoTable.cpp" />
     <ClCompile Include="src\Module\Tables\SqliteManager.cpp" />
     <ClCompile Include="src\Module\Tables\CompletedVideoTable.cpp" />
     <ClCompile Include="src\View\Common\TopWindow.cpp" />
@@ -138,10 +140,12 @@
     <QtUic Include="src\View\ThreeChoices\ThreeChoicesWindow.ui" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Model\CreateDataModel.h" />
     <ClInclude Include="src\Model\JsonDataModel.h" />
     <ClInclude Include="src\Model\VideoDataModel.h" />
     <ClInclude Include="src\Module\Tables\CommonData.h" />
     <ClInclude Include="src\Module\Tables\CommonErrorCode.h" />
+    <ClInclude Include="src\Module\Tables\CreateVideoTable.h" />
     <ClInclude Include="src\Module\Tables\SqliteManager.h" />
     <ClInclude Include="src\Module\Tables\CompletedVideoTable.h" />
     <QtMoc Include="src\View\ContinueChoose\UnfinishedItem.h" />

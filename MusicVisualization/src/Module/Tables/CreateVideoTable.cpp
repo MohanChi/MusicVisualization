@@ -78,6 +78,7 @@ CreateVideo CreateVideoTable::SelectCreateVideo(std::string filename)
 	{
 		return CreateVideo();
 	}
+	DeleteResult(res.result);
 	return cv;
 }
 
@@ -100,5 +101,6 @@ CreateVideoVec CreateVideoTable::SelectAllCreateVideos()
 		cv.contrast_strength = atof(res.result[index + 4]);
 		cvVec.push_back(cv);
 	}
+	DeleteResult(res.result);
 	return cvVec;
 }

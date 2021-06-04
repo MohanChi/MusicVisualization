@@ -106,3 +106,8 @@ DBResult SqliteManager::Select(std::string sql)
 		return res;
 	}
 }
+
+void SqliteManager::DeleteResult(char ** result)
+{
+	sqlite3_free_table(result);
+}

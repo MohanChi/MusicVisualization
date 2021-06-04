@@ -14,6 +14,7 @@ public:
 	DBStatus CloseDB();
 	DBStatus Excute(std::string sql);
 	DBResult Select(std::string sql);
+	void DeleteResult(char ** result);
 
 private:
 	const char* DBName;

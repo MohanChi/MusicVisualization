@@ -10,6 +10,7 @@ CreateVideoWindow::CreateVideoWindow(QWidget *parent)
 	ui.setupUi(this);
 
 	QObject::connect(ui.btn_back, SIGNAL(clicked()), this, SLOT(slot_OnBtnBackClicked()));
+	QObject::connect(ui.btn_generate, SIGNAL(clicked()), this, SLOT(slot_OnBtnGenerateClicked()));
 	QObject::connect(ui.hs_pulse_react, SIGNAL(valueChanged(int)), this, 
 		SLOT(slot_SliderPulseReact(int)));
 	QObject::connect(ui.dsb_pulse_react, SIGNAL(valueChanged(double)), this,
@@ -42,6 +43,12 @@ void CreateVideoWindow::SetInitialData(CreateVideo cv)
 	ui.dsb_pulse_react->setValue(cv.pulse_react);
 	ui.dsb_motion_react->setValue(cv.motion_react);
 	ui.dsb_contrast_strength->setValue(cv.contrast_strength);
+}
+
+void CreateVideoWindow::slot_OnBtnGenerateClicked()
+{
+	CreateDataModel cdm;
+	cdm.UpdateCreateVideosData(m_cv);
 }
 
 void CreateVideoWindow::slot_SliderPulseReact(int value)

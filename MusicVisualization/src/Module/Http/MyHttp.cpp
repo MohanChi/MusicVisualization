@@ -2,6 +2,9 @@
 #include <curl/curl.h>
 #include <fstream>
 
+#define MAX_CONN_TIMEOUT 20
+#define MAX_TIMEOUT 1000
+
 MyHttp::MyHttp()
 {
 	curl_global_init(CURL_GLOBAL_ALL);
@@ -11,7 +14,7 @@ MyHttp::~MyHttp()
 {
 }
 
-void MyHttp::SendJsonDataToServer(std::string serverUrl, std::string jsonData)
+void MyHttp::PostJsonDataToServer(std::string serverUrl, std::string jsonData)
 {
 	CURL* curl = NULL;
 	CURLcode res = CURLE_OK;
@@ -39,7 +42,7 @@ void MyHttp::SendJsonDataToServer(std::string serverUrl, std::string jsonData)
 	}
 }
 
-void MyHttp::SendFileToServer(std::string serverUrl, std::string filename)
+void MyHttp::PostFileToServer(std::string serverUrl, std::string filename)
 {
 	CURL *curl = curl_easy_init();
 	if (curl)
@@ -79,4 +82,53 @@ void MyHttp::SendFileToServer(std::string serverUrl, std::string filename)
 		curl_easy_cleanup(curl);
 		curl_global_cleanup();
 	}
+}
+
+void MyHttp::GetFileFromServer(std::string serverUrl, std::string outFilename)
+{
+	FILE* fp = fopen(outFilename.c_str(), "wb");
+	if (!fp) {
+		std::cout << "Create file failed" << std::endl;
+	}
+
+	CURL *curl = curl_easy_init();
+	if (curl)
+	{
+		// set params  
+		curl_easy_setopt(curl, CURLOPT_URL, serverUrl.c_str()); // url  
+		curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, false); // if want to use https  
+		curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, false); // set peer and host verify false  
+		curl_easy_setopt(curl, CURLOPT_VERBOSE, 1);
+		curl_easy_setopt(curl, CURLOPT_READFUNCTION, NULL);
+		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, callback_write_file);
+		curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
+		curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1L); 
+		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, true);
+		curl_easy_setopt(curl, CURLOPT_HEADER, false);
+		curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, MAX_CONN_TIMEOUT); // set transport and time out time  
+		curl_easy_setopt(curl, CURLOPT_TIMEOUT, 3);
+		// start req  
+		curl_easy_perform(curl);
+		fflush(fp);
+		fseek(fp, 0, SEEK_END);
+		int nDown = ftell(fp);
+		fclose(fp);
+	}
+	
+	// release curl  
+	curl_easy_cleanup(curl);
+
+}
+
+size_t MyHttp::callback_write_file(void * ptr, size_t size, size_t nmemb, void * userdata)
+{
+	FILE *fp = static_cast<FILE *>(userdata);
+	size_t length = fwrite(ptr, size, nmemb, fp);
+	//std::cout << length << ", " << nmemb << ", "  << size << ", "<< size * nmemb << std::endl;
+	/*if (length != nmemb)
+	{
+		return length;
+	}*/
+	int written = (int)size * (int)nmemb;
+	return written;
 }

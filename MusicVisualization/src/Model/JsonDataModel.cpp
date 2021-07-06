@@ -14,20 +14,15 @@ JsonDataModel::~JsonDataModel()
 {
 }
 
-void JsonDataModel::FormJsonData()
+std::string JsonDataModel::FormJsonData(CreateVideo cv)
 {
-	JsonDataModel jdm;
-	std::string musicFile;
-	jdm.ReadFileInBinary("F:\\MIProject\\Never.mp3", musicFile);
 	QJsonObject obj;
-	obj.insert("filename", "abcccc");
-	obj.insert("pulse_react", 0.09);
-	obj.insert("motion_react", 23.56);
-	obj.insert("contrast_strength", 1.1);
-	obj.insert("musicFile", musicFile.c_str());
+	obj.insert("filename", cv.filename.c_str());
+	obj.insert("pulse_react", cv.pulse_react);
+	obj.insert("motion_react", cv.motion_react);
+	obj.insert("contrast_strength", cv.contrast_strength);
 
-	std::string jData = (QJsonDocument(obj).toJson()).toStdString();
-	std::cout << "jData: " << jData << std::endl;
+	return (QJsonDocument(obj).toJson()).toStdString();
 }
 
 int JsonDataModel::ReadFileInBinary(std::string filename, std::string & binaryString)

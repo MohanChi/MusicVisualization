@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
@@ -50,6 +51,11 @@ public:
     QLabel *label_12;
     QLabel *label_positionTime;
     QLabel *label_totalTime;
+    QDoubleSpinBox *dsb_pulse_react;
+    QDoubleSpinBox *dsb_motion_react;
+    QDoubleSpinBox *dsb_contrast_strength;
+    QLabel *label_filename;
+    QLabel *label_tick;
 
     void setupUi(QWidget *CreateVideoWindow)
     {
@@ -59,11 +65,12 @@ public:
         widget_background = new QWidget(CreateVideoWindow);
         widget_background->setObjectName(QString::fromUtf8("widget_background"));
         widget_background->setGeometry(QRect(0, 0, 1000, 560));
-        widget_background->setStyleSheet(QString::fromUtf8("background-color: rgb(227, 227, 227);"));
+        widget_background->setStyleSheet(QString::fromUtf8("background-color: rgb(248, 249, 250);"));
         btn_back = new QPushButton(widget_background);
         btn_back->setObjectName(QString::fromUtf8("btn_back"));
         btn_back->setGeometry(QRect(10, 10, 40, 40));
         btn_back->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        btn_back->setIconSize(QSize(40, 40));
         verticalLayoutWidget = new QWidget(widget_background);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(380, 60, 611, 371));
@@ -74,7 +81,7 @@ public:
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         hs_pulse_react = new QSlider(widget_background);
         hs_pulse_react->setObjectName(QString::fromUtf8("hs_pulse_react"));
-        hs_pulse_react->setGeometry(QRect(60, 110, 300, 22));
+        hs_pulse_react->setGeometry(QRect(60, 110, 250, 22));
         hs_pulse_react->setStyleSheet(QString::fromUtf8("QSlider::groove:horizontal {\n"
 "background:transparent;\n"
 "}\n"
@@ -104,10 +111,11 @@ public:
 "margin-top:7px;\n"
 "margin-bottom:7px;\n"
 "}"));
+        hs_pulse_react->setPageStep(1);
         hs_pulse_react->setOrientation(Qt::Horizontal);
         hs_motion_react = new QSlider(widget_background);
         hs_motion_react->setObjectName(QString::fromUtf8("hs_motion_react"));
-        hs_motion_react->setGeometry(QRect(60, 160, 300, 22));
+        hs_motion_react->setGeometry(QRect(60, 160, 250, 22));
         hs_motion_react->setStyleSheet(QString::fromUtf8("QSlider::groove:horizontal {\n"
 "background:transparent;\n"
 "}\n"
@@ -137,13 +145,15 @@ public:
 "margin-top:7px;\n"
 "margin-bottom:7px;\n"
 "}"));
+        hs_motion_react->setMaximum(10);
+        hs_motion_react->setPageStep(1);
         hs_motion_react->setOrientation(Qt::Horizontal);
         label = new QLabel(widget_background);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(60, 130, 21, 16));
         label_2 = new QLabel(widget_background);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(350, 130, 21, 16));
+        label_2->setGeometry(QRect(305, 130, 21, 20));
         label_3 = new QLabel(widget_background);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(20, 112, 31, 16));
@@ -155,10 +165,10 @@ public:
         label_5->setGeometry(QRect(60, 180, 21, 16));
         label_6 = new QLabel(widget_background);
         label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(355, 180, 16, 16));
+        label_6->setGeometry(QRect(310, 180, 16, 16));
         hs_contrast_strength = new QSlider(widget_background);
         hs_contrast_strength->setObjectName(QString::fromUtf8("hs_contrast_strength"));
-        hs_contrast_strength->setGeometry(QRect(60, 210, 300, 22));
+        hs_contrast_strength->setGeometry(QRect(60, 210, 250, 22));
         hs_contrast_strength->setStyleSheet(QString::fromUtf8("QSlider::groove:horizontal {\n"
 "background:transparent;\n"
 "}\n"
@@ -188,6 +198,8 @@ public:
 "margin-top:7px;\n"
 "margin-bottom:7px;\n"
 "}"));
+        hs_contrast_strength->setMaximum(10);
+        hs_contrast_strength->setPageStep(1);
         hs_contrast_strength->setOrientation(Qt::Horizontal);
         label_7 = new QLabel(widget_background);
         label_7->setObjectName(QString::fromUtf8("label_7"));
@@ -197,11 +209,12 @@ public:
         label_8->setGeometry(QRect(60, 230, 21, 16));
         label_9 = new QLabel(widget_background);
         label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setGeometry(QRect(355, 230, 16, 16));
+        label_9->setGeometry(QRect(310, 230, 16, 16));
         btn_upload_music = new QPushButton(widget_background);
         btn_upload_music->setObjectName(QString::fromUtf8("btn_upload_music"));
         btn_upload_music->setGeometry(QRect(90, 60, 40, 40));
         btn_upload_music->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        btn_upload_music->setIconSize(QSize(40, 40));
         label_10 = new QLabel(widget_background);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(10, 70, 71, 16));
@@ -215,16 +228,19 @@ public:
         label_11->setGeometry(QRect(180, 70, 71, 16));
         btn_generate = new QPushButton(widget_background);
         btn_generate->setObjectName(QString::fromUtf8("btn_generate"));
-        btn_generate->setGeometry(QRect(380, 490, 120, 50));
+        btn_generate->setGeometry(QRect(380, 490, 100, 40));
         btn_generate->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        btn_generate->setIconSize(QSize(100, 40));
         btn_completed = new QPushButton(widget_background);
         btn_completed->setObjectName(QString::fromUtf8("btn_completed"));
-        btn_completed->setGeometry(QRect(560, 490, 120, 50));
+        btn_completed->setGeometry(QRect(510, 490, 100, 40));
         btn_completed->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        btn_completed->setIconSize(QSize(100, 40));
         btn_play = new QPushButton(widget_background);
         btn_play->setObjectName(QString::fromUtf8("btn_play"));
-        btn_play->setGeometry(QRect(380, 440, 30, 30));
+        btn_play->setGeometry(QRect(380, 435, 40, 40));
         btn_play->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        btn_play->setIconSize(QSize(40, 40));
         horizontalSlider = new QSlider(widget_background);
         horizontalSlider->setObjectName(QString::fromUtf8("horizontalSlider"));
         horizontalSlider->setGeometry(QRect(420, 445, 441, 22));
@@ -268,6 +284,34 @@ public:
         label_totalTime = new QLabel(widget_background);
         label_totalTime->setObjectName(QString::fromUtf8("label_totalTime"));
         label_totalTime->setGeometry(QRect(930, 450, 50, 16));
+        dsb_pulse_react = new QDoubleSpinBox(widget_background);
+        dsb_pulse_react->setObjectName(QString::fromUtf8("dsb_pulse_react"));
+        dsb_pulse_react->setGeometry(QRect(320, 110, 51, 22));
+        dsb_pulse_react->setStyleSheet(QString::fromUtf8(""));
+        dsb_pulse_react->setDecimals(1);
+        dsb_pulse_react->setMaximum(10.000000000000000);
+        dsb_pulse_react->setSingleStep(0.100000000000000);
+        dsb_pulse_react->setStepType(QAbstractSpinBox::DefaultStepType);
+        dsb_motion_react = new QDoubleSpinBox(widget_background);
+        dsb_motion_react->setObjectName(QString::fromUtf8("dsb_motion_react"));
+        dsb_motion_react->setGeometry(QRect(320, 160, 51, 22));
+        dsb_motion_react->setDecimals(1);
+        dsb_motion_react->setMaximum(1.000000000000000);
+        dsb_motion_react->setSingleStep(0.100000000000000);
+        dsb_contrast_strength = new QDoubleSpinBox(widget_background);
+        dsb_contrast_strength->setObjectName(QString::fromUtf8("dsb_contrast_strength"));
+        dsb_contrast_strength->setGeometry(QRect(320, 210, 51, 22));
+        dsb_contrast_strength->setDecimals(1);
+        dsb_contrast_strength->setMaximum(1.000000000000000);
+        dsb_contrast_strength->setSingleStep(0.100000000000000);
+        label_filename = new QLabel(widget_background);
+        label_filename->setObjectName(QString::fromUtf8("label_filename"));
+        label_filename->setGeometry(QRect(70, 20, 71, 21));
+        label_tick = new QLabel(widget_background);
+        label_tick->setObjectName(QString::fromUtf8("label_tick"));
+        label_tick->setGeometry(QRect(135, 60, 40, 40));
+        label_tick->setStyleSheet(QString::fromUtf8("background-color: rgb(188, 188, 188);"));
+        label_tick->setPixmap(QPixmap(QString::fromUtf8(":/MusicVisualization/img/not.png")));
 
         retranslateUi(CreateVideoWindow);
 
@@ -299,6 +343,8 @@ public:
         label_12->setText(QApplication::translate("CreateVideoWindow", "/", nullptr));
         label_positionTime->setText(QString());
         label_totalTime->setText(QString());
+        label_filename->setText(QApplication::translate("CreateVideoWindow", "TextLabel", nullptr));
+        label_tick->setText(QString());
     } // retranslateUi
 
 };

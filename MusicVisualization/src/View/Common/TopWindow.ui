@@ -40,6 +40,12 @@
     <property name="text">
      <string/>
     </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
    </widget>
    <widget class="QPushButton" name="btn_min">
     <property name="geometry">
@@ -55,6 +61,12 @@
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
     </property>
    </widget>
    <widget class="QLabel" name="label_icon">

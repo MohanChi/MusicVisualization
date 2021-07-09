@@ -1,2 +1,8 @@
-﻿  main.cpp
+﻿  uic src\View\CreateVideos\CreateVideoWindow.ui
+  rcc MusicVisualization.qrc
+  CreateVideoWindow.cpp
+  NewNameWindow.cpp
+  DisplayVideosWindow.cpp
+  moc_CreateVideoWindow.cpp
+  qrc_MusicVisualization.cpp
   MusicVisualization.vcxproj -> F:\MIProject\MusicVisualization\x64\Debug\MusicVisualization.exe

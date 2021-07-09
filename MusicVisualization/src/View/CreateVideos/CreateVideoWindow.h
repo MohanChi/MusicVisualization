@@ -21,15 +21,20 @@ public:
 
 	void SetInitialData(CreateVideo cv);
 
+private:
+	void SetInitialUI();
+
 private slots:
 	void slot_OnBtnBackClicked();
 	void slot_OnBtnGenerateClicked();
+	void slot_OnBtnUploadMusic();
 	void slot_SliderPulseReact(int value);
 	void slot_SliderMotionReact(int value);
 	void slot_SliderContrastStrength(int value);
 	void slot_DSBPulseReact(double value);
 	void slot_DSBMotionReact(double value);
 	void slot_DSBContrastStrength(double value);
+	void slot_StyleComboBox(const QString & text);
 
 private:
 	Ui::CreateVideoWindow ui;

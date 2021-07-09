@@ -50,6 +50,7 @@ public:
         widget_container = new QWidget(TopWindow);
         widget_container->setObjectName(QString::fromUtf8("widget_container"));
         widget_container->setGeometry(QRect(0, 40, 1000, 560));
+        widget_container->setStyleSheet(QString::fromUtf8("background-color: rgb(75, 75, 75);"));
 
         retranslateUi(TopWindow);
 

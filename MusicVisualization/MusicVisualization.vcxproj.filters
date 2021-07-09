@@ -119,6 +119,12 @@
     <ClCompile Include="src\Module\Tables\CreateVideoTable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Module\Http\MyHttp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Controller\CreateVideoControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="MusicVisualization.qrc" />
@@ -146,6 +152,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Module\Tables\CreateVideoTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Module\Http\MyHttp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Controller\CreateVideoControl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

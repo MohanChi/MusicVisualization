@@ -1,4 +1,15 @@
 <RCC>
-    <qresource prefix="MusicVisualization">
+    <qresource prefix="/MusicVisualization">
+        <file>img/circle_goback.png</file>
+        <file>img/circle_tick.png</file>
+        <file>img/not.png</file>
+        <file>img/pause.png</file>
+        <file>img/play.png</file>
+        <file>img/upload.png</file>
+        <file>img/minimize.png</file>
+        <file>img/Generate.png</file>
+        <file>img/Complete.png</file>
+        <file>img/Cancel.png</file>
+        <file>img/OK.png</file>
     </qresource>
 </RCC>

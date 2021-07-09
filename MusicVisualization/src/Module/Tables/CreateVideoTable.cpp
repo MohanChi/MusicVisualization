@@ -6,7 +6,7 @@ CreateVideoTable::CreateVideoTable()
 	InitializeDB("MusicVisualization.db");
 	OpenDB();
 	Excute("CREATE TABLE IF NOT EXISTS CreateVideo(" \
-		"filename varchar(255) primary key , musicname varchar(255), " \
+		"filename varchar(255) primary key , musicname varchar(255), style varchar(255), " \
 		"pulse_react double, motion_react double, contrast_strength double)");
 }
 
@@ -24,7 +24,8 @@ DBStatus CreateVideoTable::InsertCreateVideo(CreateVideo Cr)
 	std::string sql;
 	sql = "INSERT INTO " + GetTableName() + " VALUES (\'"
 		+ Cr.filename + "\', \'"
-		+ Cr.musicname + "\', "
+		+ Cr.musicname + "\', \'"
+		+ Cr.style + "\', "
 		+ std::to_string(Cr.pulse_react) + ", "
 		+ std::to_string(Cr.motion_react) + ", "
 		+ std::to_string(Cr.contrast_strength) + "); ";
@@ -45,6 +46,7 @@ DBStatus CreateVideoTable::UpdateCreateVideo(CreateVideo new_Cr)
 	std::string sql;
 	sql = "UPDATE " + GetTableName() + " SET "
 		+ "musicname = \'" + new_Cr.musicname + "\', "
+		+ "musicname = \'" + new_Cr.style + "\', "
 		+ "pulse_react = " + std::to_string(new_Cr.pulse_react) + ", "
 		+ "motion_react = " + std::to_string(new_Cr.motion_react) + ", "
 		+ "contrast_strength = " + std::to_string(new_Cr.contrast_strength) + " "
@@ -61,13 +63,14 @@ CreateVideo CreateVideoTable::SelectCreateVideo(std::string filename)
 	DBResult res = Select(sql);
 	if (res.row == 1)
 	{
-		if (res.column == 5)
+		if (res.column == 6)
 		{
 			cv.filename = res.result[5];
 			cv.musicname = res.result[6];
-			cv.pulse_react = atof(res.result[7]);
-			cv.motion_react = atof(res.result[8]);
-			cv.contrast_strength = atof(res.result[9]);
+			cv.style = res.result[7];
+			cv.pulse_react = atof(res.result[8]);
+			cv.motion_react = atof(res.result[9]);
+			cv.contrast_strength = atof(res.result[10]);
 		}
 		else
 		{
@@ -96,9 +99,10 @@ CreateVideoVec CreateVideoTable::SelectAllCreateVideos()
 		index = res.column * (i + 1);
 		cv.filename = res.result[index];
 		cv.musicname = res.result[index + 1];
-		cv.pulse_react = atof(res.result[index + 2]);
-		cv.motion_react = atof(res.result[index + 3]);
-		cv.contrast_strength = atof(res.result[index + 4]);
+		cv.style = res.result[index + 2];
+		cv.pulse_react = atof(res.result[index + 3]);
+		cv.motion_react = atof(res.result[index + 4]);
+		cv.contrast_strength = atof(res.result[index + 5]);
 		cvVec.push_back(cv);
 	}
 	DeleteResult(res.result);

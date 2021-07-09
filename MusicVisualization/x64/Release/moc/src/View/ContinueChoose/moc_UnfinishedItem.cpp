@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'CreateVideoWindow.h'
+** Meta object code from reading C++ file 'UnfinishedItem.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.12.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../../../../../src/View/Create/CreateVideoWindow.h"
+#include "../../../../../../src/View/ContinueChoose/UnfinishedItem.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'CreateVideoWindow.h' doesn't include <QObject>."
+#error "The header file 'UnfinishedItem.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.12.1. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -20,25 +20,25 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_CreateVideoWindow_t {
+struct qt_meta_stringdata_UnfinishedItem_t {
     QByteArrayData data[1];
-    char stringdata0[18];
+    char stringdata0[15];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_CreateVideoWindow_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_UnfinishedItem_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_CreateVideoWindow_t qt_meta_stringdata_CreateVideoWindow = {
+static const qt_meta_stringdata_UnfinishedItem_t qt_meta_stringdata_UnfinishedItem = {
     {
-QT_MOC_LITERAL(0, 0, 17) // "CreateVideoWindow"
+QT_MOC_LITERAL(0, 0, 14) // "UnfinishedItem"
 
     },
-    "CreateVideoWindow"
+    "UnfinishedItem"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_CreateVideoWindow[] = {
+static const uint qt_meta_data_UnfinishedItem[] = {
 
  // content:
        8,       // revision
@@ -54,7 +54,7 @@ static const uint qt_meta_data_CreateVideoWindow[] = {
        0        // eod
 };
 
-void CreateVideoWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void UnfinishedItem::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     Q_UNUSED(_o);
     Q_UNUSED(_id);
@@ -62,30 +62,32 @@ void CreateVideoWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
     Q_UNUSED(_a);
 }
 
-QT_INIT_METAOBJECT const QMetaObject CreateVideoWindow::staticMetaObject = { {
+QT_INIT_METAOBJECT const QMetaObject UnfinishedItem::staticMetaObject = { {
     &QWidget::staticMetaObject,
-    qt_meta_stringdata_CreateVideoWindow.data,
-    qt_meta_data_CreateVideoWindow,
+    qt_meta_stringdata_UnfinishedItem.data,
+    qt_meta_data_UnfinishedItem,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *CreateVideoWindow::metaObject() const
+const QMetaObject *UnfinishedItem::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *CreateVideoWindow::qt_metacast(const char *_clname)
+void *UnfinishedItem::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_CreateVideoWindow.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_UnfinishedItem.stringdata0))
         return static_cast<void*>(this);
+    if (!strcmp(_clname, "QListWidgetItem"))
+        return static_cast< QListWidgetItem*>(this);
     return QWidget::qt_metacast(_clname);
 }
 
-int CreateVideoWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int UnfinishedItem::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QWidget::qt_metacall(_c, _id, _a);
     return _id;

@@ -1,32 +1,52 @@
 ﻿  Reading Qt configuration (E:\Qt\5.12.1\msvc2017_64\bin\qmake.exe)
-  uic MusicVisualization.ui
   uic src\View\Common\TopWindow.ui
-  uic src\View\Common\WaitingLoadingWindow.ui
+  uic src\View\ContinueChoose\ContinueChooseWindow.ui
+  uic src\View\ContinueChoose\UnfinishedItem.ui
+  uic src\View\CreateVideos\CreateVideoWindow.ui
+  uic src\View\CreateVideos\NewNameWindow.ui
+  uic src\View\CreateVideos\ReminderWidget.ui
   uic src\View\DisplayVideos\DisplayVideosWindow.ui
   uic src\View\DisplayVideos\VideoItem.ui
-  uic src\View\ThreeChoices\ThreeChoicesWindow.ui
-  rcc MusicVisualization.qrc
   moc MusicVisualization.h
-   RCC: Warning: No resources in 'F:\MIProject\MusicVisualization\MusicVisualization\MusicVisualization.qrc'.
+  moc src\View\ContinueChoose\UnfinishedItem.h
+  moc src\View\ContinueChoose\ContinueChooseWindow.h
+  moc src\View\CreateVideos\CreateVideoWindow.h
+  moc src\View\CreateVideos\ReminderWidget.h
+  moc src\View\CreateVideos\NewNameWindow.h
   moc src\View\DisplayVideos\VideoItem.h
   moc src\View\DisplayVideos\DisplayVideosWindow.h
   moc src\View\Common\TopWindow.h
   moc src\View\Common\WaitImageWidget.h
   moc src\View\Common\WaitingLoadingWindow.h
   moc src\View\ThreeChoices\ThreeChoicesWindow.h
+  CreateDataModel.cpp
+  JsonDataModel.cpp
+  VideoDataModel.cpp
+  MyHttp.cpp
+  CreateVideoTable.cpp
   SqliteManager.cpp
   CompletedVideoTable.cpp
   TopWindow.cpp
   WaitImageWidget.cpp
   WaitingLoadingWindow.cpp
+  ContinueChooseWindow.cpp
+  UnfinishedItem.cpp
+  CreateVideoWindow.cpp
+  NewNameWindow.cpp
+  ReminderWidget.cpp
+f:\miproject\musicvisualization\musicvisualization\src\view\common\topwindow.cpp(3): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
   DisplayVideosWindow.cpp
   VideoItem.cpp
   ThreeChoicesWindow.cpp
   MusicVisualization.cpp
   main.cpp
-f:\miproject\musicvisualization\musicvisualization\src\view\common\topwindow.cpp(2): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
   qrc_MusicVisualization.cpp
   moc_MusicVisualization.cpp
+  moc_UnfinishedItem.cpp
+  moc_ContinueChooseWindow.cpp
+  moc_CreateVideoWindow.cpp
+  moc_ReminderWidget.cpp
+  moc_NewNameWindow.cpp
   moc_VideoItem.cpp
   moc_DisplayVideosWindow.cpp
   moc_TopWindow.cpp

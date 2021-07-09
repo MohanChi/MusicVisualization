@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(227, 227, 227);</string>
+    <string notr="true">background-color: rgb(248, 249, 250);</string>
    </property>
    <widget class="QPushButton" name="btn_back">
     <property name="geometry">
@@ -39,6 +39,12 @@
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>40</width>
+      <height>40</height>
+     </size>
     </property>
    </widget>
    <widget class="QWidget" name="verticalLayoutWidget">
@@ -331,6 +337,12 @@ margin-bottom:7px;
     <property name="text">
      <string/>
     </property>
+    <property name="iconSize">
+     <size>
+      <width>40</width>
+      <height>40</height>
+     </size>
+    </property>
    </widget>
    <widget class="QLabel" name="label_10">
     <property name="geometry">
@@ -383,8 +395,8 @@ margin-bottom:7px;
      <rect>
       <x>380</x>
       <y>490</y>
-      <width>120</width>
-      <height>50</height>
+      <width>100</width>
+      <height>40</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -392,15 +404,21 @@ margin-bottom:7px;
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>40</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_completed">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>510</x>
       <y>490</y>
-      <width>120</width>
-      <height>50</height>
+      <width>100</width>
+      <height>40</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -408,15 +426,21 @@ margin-bottom:7px;
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>40</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_play">
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>440</y>
-      <width>30</width>
-      <height>30</height>
+      <y>435</y>
+      <width>40</width>
+      <height>40</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -424,6 +448,12 @@ margin-bottom:7px;
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>40</width>
+      <height>40</height>
+     </size>
     </property>
    </widget>
    <widget class="QSlider" name="horizontalSlider">
@@ -588,9 +618,30 @@ margin-bottom:7px;
      <string>TextLabel</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_tick">
+    <property name="geometry">
+     <rect>
+      <x>135</x>
+      <y>60</y>
+      <width>40</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(188, 188, 188);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../../../MusicVisualization.qrc">:/MusicVisualization/img/not.png</pixmap>
+    </property>
+   </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="../../../MusicVisualization.qrc"/>
+ </resources>
  <connections/>
 </ui>

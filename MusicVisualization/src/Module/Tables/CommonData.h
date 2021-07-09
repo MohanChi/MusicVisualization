@@ -1,4 +1,8 @@
 #pragma once
+#define serverURL "127.0.0.1"
+#define postMusicURL "http://127.0.0.1:5000/MusicData"
+#define postParameterURL "http://127.0.0.1:5000/ParameterData"
+#include <string>
 
 struct CompletedVideo
 {
@@ -7,9 +11,9 @@ struct CompletedVideo
 
 struct CreateVideo
 {
-	std::string UID;
 	std::string filename;
 	std::string musicname;
+	std::string style;
 	double pulse_react;
 	double motion_react;
 	double contrast_strength;

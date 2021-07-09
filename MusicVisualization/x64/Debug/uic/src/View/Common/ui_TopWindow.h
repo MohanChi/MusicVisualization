@@ -39,10 +39,12 @@ public:
         btn_close->setObjectName(QString::fromUtf8("btn_close"));
         btn_close->setGeometry(QRect(960, 5, 30, 30));
         btn_close->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        btn_close->setIconSize(QSize(30, 30));
         btn_min = new QPushButton(widget_background);
         btn_min->setObjectName(QString::fromUtf8("btn_min"));
         btn_min->setGeometry(QRect(920, 5, 30, 30));
         btn_min->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        btn_min->setIconSize(QSize(30, 30));
         label_icon = new QLabel(widget_background);
         label_icon->setObjectName(QString::fromUtf8("label_icon"));
         label_icon->setGeometry(QRect(5, 5, 151, 30));

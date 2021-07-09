@@ -14,10 +14,11 @@ JsonDataModel::~JsonDataModel()
 {
 }
 
-std::string JsonDataModel::FormJsonData(CreateVideo cv)
+std::string JsonDataModel::FormCreateVideoJsonData(CreateVideo cv)
 {
 	QJsonObject obj;
 	obj.insert("filename", cv.filename.c_str());
+	obj.insert("style", cv.style.c_str());
 	obj.insert("pulse_react", cv.pulse_react);
 	obj.insert("motion_react", cv.motion_react);
 	obj.insert("contrast_strength", cv.contrast_strength);

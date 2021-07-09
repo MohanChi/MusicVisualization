@@ -8,7 +8,7 @@ public:
 	JsonDataModel();
 	~JsonDataModel();
 
-	std::string FormJsonData(CreateVideo cv);
+	std::string FormCreateVideoJsonData(CreateVideo cv);
 	int ReadFileInBinary(std::string filename, std::string & binaryString);
 	int WriteFileInBinary(std::string filename, const std::string binaryString);
 

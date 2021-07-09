@@ -28,6 +28,8 @@ QWidget * TopWindow::GetWidgetContainer()
 
 void TopWindow::InitializeUI()
 {
+	ui.btn_close->setIcon(QPixmap(":/MusicVisualization/img/not.png"));
+	ui.btn_min->setIcon(QPixmap(":/MusicVisualization/img/minimize.png"));
 	//setAttribute(Qt::WA_TranslucentBackground, true);
 	setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
 }

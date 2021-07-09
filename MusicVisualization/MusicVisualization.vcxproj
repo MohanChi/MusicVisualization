@@ -40,27 +40,29 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>E:\tools\sqlite\sqlite-3.25.0300;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\tools\sqlite\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\tools\sqlite\sqlite-3.25.0300;E:\tools\libcurl-vc15-x64-release-static-ipv6-sspi-schannel\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\tools\sqlite\x64;E:\tools\libcurl-vc15-x64-release-static-ipv6-sspi-schannel\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>E:\tools\sqlite\sqlite-3.25.0300;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\tools\sqlite\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\tools\sqlite\sqlite-3.25.0300;E:\tools\libcurl-vc15-x64-debug-static-ipv6-sspi-schannel\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\tools\sqlite\x64;E:\tools\libcurl-vc15-x64-debug-static-ipv6-sspi-schannel\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Link>
-      <AdditionalDependencies>sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sqlite3.lib;libcurl_a.lib;Ws2_32.lib;Wldap32.lib;winmm.lib;Crypt32.lib;Normaliz.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ClCompile>
       <AdditionalIncludeDirectories>.\src\View;.\src\View\Common;.\src\View\DisplayVideos;.\src\View\Create;.\src\View\ContinueChoose;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>CURL_STATICLIB</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Link>
-      <AdditionalDependencies>sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sqlite3.lib;libcurl_a_debug.lib;Ws2_32.lib;Wldap32.lib;winmm.lib;Crypt32.lib;Normaliz.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ClCompile>
       <AdditionalIncludeDirectories>.\src\View;.\src\View\Common;.\src\View\DisplayVideos;.\src\View\Create;.\src\View\ContinueChoose;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>CURL_STATICLIB</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
@@ -106,9 +108,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Controller\CreateVideoControl.cpp" />
     <ClCompile Include="src\Model\CreateDataModel.cpp" />
     <ClCompile Include="src\Model\JsonDataModel.cpp" />
     <ClCompile Include="src\Model\VideoDataModel.cpp" />
+    <ClCompile Include="src\Module\Http\MyHttp.cpp" />
     <ClCompile Include="src\Module\Tables\CreateVideoTable.cpp" />
     <ClCompile Include="src\Module\Tables\SqliteManager.cpp" />
     <ClCompile Include="src\Module\Tables\CompletedVideoTable.cpp" />
@@ -140,9 +144,11 @@
     <QtUic Include="src\View\ThreeChoices\ThreeChoicesWindow.ui" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Controller\CreateVideoControl.h" />
     <ClInclude Include="src\Model\CreateDataModel.h" />
     <ClInclude Include="src\Model\JsonDataModel.h" />
     <ClInclude Include="src\Model\VideoDataModel.h" />
+    <ClInclude Include="src\Module\Http\MyHttp.h" />
     <ClInclude Include="src\Module\Tables\CommonData.h" />
     <ClInclude Include="src\Module\Tables\CommonErrorCode.h" />
     <ClInclude Include="src\Module\Tables\CreateVideoTable.h" />

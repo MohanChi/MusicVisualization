@@ -25,7 +25,7 @@
    <property name="styleSheet">
     <string notr="true">background-color: rgb(199, 199, 199);</string>
    </property>
-   <widget class="QPushButton" name="btn_OK">
+   <widget class="ResPushButton" name="btn_OK">
     <property name="geometry">
      <rect>
       <x>340</x>
@@ -34,8 +34,11 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
     </property>
     <property name="text">
      <string/>
@@ -47,7 +50,7 @@
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn_cancel">
+   <widget class="ResPushButton" name="btn_cancel">
     <property name="geometry">
      <rect>
       <x>560</x>
@@ -56,8 +59,11 @@
       <height>40</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
     </property>
     <property name="text">
      <string/>
@@ -101,6 +107,13 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>ResPushButton</class>
+   <extends>QPushButton</extends>
+   <header location="global">F:\MIProject\MusicVisualization\MusicVisualization\src\Module\QtWidget\respushbutton.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

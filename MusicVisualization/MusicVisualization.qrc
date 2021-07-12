@@ -1,15 +1,21 @@
 <RCC>
     <qresource prefix="/MusicVisualization">
+        <file>img/ADD.png</file>
+        <file>img/Cancel.png</file>
+        <file>img/CD.png</file>
         <file>img/circle_goback.png</file>
         <file>img/circle_tick.png</file>
+        <file>img/Complete.png</file>
+        <file>img/Continue.png</file>
+        <file>img/Create.png</file>
+        <file>img/Display.png</file>
+        <file>img/Generate.png</file>
+        <file>img/minimize.png</file>
         <file>img/not.png</file>
+        <file>img/OK.png</file>
         <file>img/pause.png</file>
         <file>img/play.png</file>
+        <file>img/Slider.png</file>
         <file>img/upload.png</file>
-        <file>img/minimize.png</file>
-        <file>img/Generate.png</file>
-        <file>img/Complete.png</file>
-        <file>img/Cancel.png</file>
-        <file>img/OK.png</file>
     </qresource>
 </RCC>

@@ -22,7 +22,10 @@
      <height>560</height>
     </rect>
    </property>
-   <widget class="QPushButton" name="btn_continue">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(73, 80, 87);</string>
+   </property>
+   <widget class="ResPushButton" name="btn_continue">
     <property name="geometry">
      <rect>
       <x>700</x>
@@ -32,13 +35,19 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
     </property>
     <property name="text">
      <string/>
     </property>
+    <property name="iconSize">
+     <size>
+      <width>150</width>
+      <height>150</height>
+     </size>
+    </property>
    </widget>
-   <widget class="QPushButton" name="btn_create">
+   <widget class="ResPushButton" name="btn_create">
     <property name="geometry">
      <rect>
       <x>420</x>
@@ -48,13 +57,19 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
     </property>
     <property name="text">
      <string/>
     </property>
+    <property name="iconSize">
+     <size>
+      <width>150</width>
+      <height>150</height>
+     </size>
+    </property>
    </widget>
-   <widget class="QPushButton" name="btn_display">
+   <widget class="ResPushButton" name="btn_display">
     <property name="geometry">
      <rect>
       <x>140</x>
@@ -63,11 +78,20 @@
       <height>150</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>150</width>
+      <height>150</height>
+     </size>
     </property>
    </widget>
    <zorder>btn_create</zorder>
@@ -76,6 +100,13 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>ResPushButton</class>
+   <extends>QPushButton</extends>
+   <header location="global">F:\MIProject\MusicVisualization\MusicVisualization\src\Module\QtWidget\respushbutton.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

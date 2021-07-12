@@ -22,8 +22,12 @@ ThreeChoicesWindow::~ThreeChoicesWindow()
 
 void ThreeChoicesWindow::InitializeUI()
 {
-	ui.widget_background->setStyleSheet("background-color:black");
+	//ui.widget_background->setStyleSheet("background-color:black");
 	setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+	//ui.btn_display->setIcon(QPixmap(":/MusicVisualization/img/Display.png"));
+	ui.btn_display->InitialStyleSheet(QPixmap(":/MusicVisualization/img/Display.png"));
+	ui.btn_create->InitialStyleSheet(QPixmap(":/MusicVisualization/img/Create.png"));
+	ui.btn_continue->InitialStyleSheet(QPixmap(":/MusicVisualization/img/Continue.png"));
 }
 
 void ThreeChoicesWindow::slot_OnBtnDisplayClicked()

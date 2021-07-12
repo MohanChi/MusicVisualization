@@ -23,6 +23,7 @@ void ReminderWidget::InitializeUI()
 {
 	this->setGeometry(parent->width() / 2 - this->width() / 2,
 		parent->height() / 2 - this->height() / 2, this->width(), this->height());
+	ui.btn_OK->InitialStyleSheet(QPixmap(":/MusicVisualization/img/OK.png"));
 }
 
 void ReminderWidget::slot_OnBtnOKClicked()

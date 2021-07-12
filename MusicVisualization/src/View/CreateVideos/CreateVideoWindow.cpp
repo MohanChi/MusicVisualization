@@ -51,11 +51,11 @@ void CreateVideoWindow::SetInitialData(CreateVideo cv)
 
 void CreateVideoWindow::SetInitialUI()
 {
-	ui.btn_back->setIcon(QPixmap(":/MusicVisualization/img/circle_goback.png"));
-	ui.btn_upload_music->setIcon(QPixmap(":/MusicVisualization/img/upload.png"));
-	ui.btn_play->setIcon(QPixmap(":/MusicVisualization/img/play.png"));
-	ui.btn_generate->setIcon(QPixmap(":/MusicVisualization/img/Generate.png"));
-	ui.btn_completed->setIcon(QPixmap(":/MusicVisualization/img/Complete.png"));
+	ui.btn_back->InitialStyleSheet(QPixmap(":/MusicVisualization/img/circle_goback.png"));
+	ui.btn_upload_music->InitialStyleSheet(QPixmap(":/MusicVisualization/img/upload.png"));
+	ui.btn_play->InitialStyleSheet(QPixmap(":/MusicVisualization/img/play.png"));
+	ui.btn_generate->InitialStyleSheet(QPixmap(":/MusicVisualization/img/Generate.png"));
+	ui.btn_completed->InitialStyleSheet(QPixmap(":/MusicVisualization/img/Complete.png"));
 }
 
 void CreateVideoWindow::slot_OnBtnGenerateClicked()

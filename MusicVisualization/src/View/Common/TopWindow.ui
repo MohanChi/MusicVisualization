@@ -25,7 +25,7 @@
    <property name="styleSheet">
     <string notr="true">background-color:rgba(20, 20, 20, 255)</string>
    </property>
-   <widget class="QPushButton" name="btn_close">
+   <widget class="ResPushButton" name="btn_close">
     <property name="geometry">
      <rect>
       <x>960</x>
@@ -47,7 +47,7 @@
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn_min">
+   <widget class="ResPushButton" name="btn_min">
     <property name="geometry">
      <rect>
       <x>920</x>
@@ -101,6 +101,13 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>ResPushButton</class>
+   <extends>QPushButton</extends>
+   <header location="global">F:\MIProject\MusicVisualization\MusicVisualization\src\Module\QtWidget\respushbutton.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

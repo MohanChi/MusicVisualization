@@ -113,6 +113,7 @@
     <ClCompile Include="src\Model\JsonDataModel.cpp" />
     <ClCompile Include="src\Model\VideoDataModel.cpp" />
     <ClCompile Include="src\Module\Http\MyHttp.cpp" />
+    <ClCompile Include="src\Module\QtWidget\ResPushButton.cpp" />
     <ClCompile Include="src\Module\Tables\CreateVideoTable.cpp" />
     <ClCompile Include="src\Module\Tables\SqliteManager.cpp" />
     <ClCompile Include="src\Module\Tables\CompletedVideoTable.cpp" />
@@ -149,6 +150,7 @@
     <ClInclude Include="src\Model\JsonDataModel.h" />
     <ClInclude Include="src\Model\VideoDataModel.h" />
     <ClInclude Include="src\Module\Http\MyHttp.h" />
+    <QtMoc Include="src\Module\QtWidget\ResPushButton.h" />
     <ClInclude Include="src\Module\Tables\CommonData.h" />
     <ClInclude Include="src\Module\Tables\CommonErrorCode.h" />
     <ClInclude Include="src\Module\Tables\CreateVideoTable.h" />

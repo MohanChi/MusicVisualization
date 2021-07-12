@@ -9,10 +9,10 @@
 #ifndef UI_TOPWINDOW_H
 #define UI_TOPWINDOW_H
 
+#include <F:\MIProject\MusicVisualization\MusicVisualization\src\Module\QtWidget\respushbutton.h>
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -21,8 +21,8 @@ class Ui_TopWindow
 {
 public:
     QWidget *widget_background;
-    QPushButton *btn_close;
-    QPushButton *btn_min;
+    ResPushButton *btn_close;
+    ResPushButton *btn_min;
     QLabel *label_icon;
     QWidget *widget_container;
 
@@ -35,12 +35,12 @@ public:
         widget_background->setObjectName(QString::fromUtf8("widget_background"));
         widget_background->setGeometry(QRect(0, 0, 1000, 40));
         widget_background->setStyleSheet(QString::fromUtf8("background-color:rgba(20, 20, 20, 255)"));
-        btn_close = new QPushButton(widget_background);
+        btn_close = new ResPushButton(widget_background);
         btn_close->setObjectName(QString::fromUtf8("btn_close"));
         btn_close->setGeometry(QRect(960, 5, 30, 30));
         btn_close->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         btn_close->setIconSize(QSize(30, 30));
-        btn_min = new QPushButton(widget_background);
+        btn_min = new ResPushButton(widget_background);
         btn_min->setObjectName(QString::fromUtf8("btn_min"));
         btn_min->setGeometry(QRect(920, 5, 30, 30));
         btn_min->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));

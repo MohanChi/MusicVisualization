@@ -25,8 +25,8 @@ void NewNameWindow::InitializeUI()
 {
 	rWidget = new ReminderWidget(this);
 	rWidget->hide();
-	ui.btn_OK->setIcon(QPixmap(":/MusicVisualization/img/OK.png"));
-	ui.btn_cancel->setIcon(QPixmap(":/MusicVisualization/img/Cancel.png"));
+	ui.btn_OK->InitialStyleSheet(QPixmap(":/MusicVisualization/img/OK.png"));
+	ui.btn_cancel->InitialStyleSheet(QPixmap(":/MusicVisualization/img/Cancel.png"));
 }
 
 void NewNameWindow::slot_OnBtnCancelClicked()

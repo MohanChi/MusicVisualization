@@ -30,7 +30,7 @@
 <QMake_QMAKE_VERSION_>3.1</QMake_QMAKE_VERSION_>
 <QMake_QT_VERSION_>5.12.1</QMake_QT_VERSION_>
 <Qt_INCLUDEPATH_
-      >$(Qt_INCLUDEPATH_);x64\Debug\moc;x64\Debug\moc\src\View\ContinueChoose;x64\Debug\moc\src\View\CreateVideos;x64\Debug\moc\src\View\DisplayVideos;x64\Debug\moc\src\View\Common;x64\Debug\moc\src\View\ThreeChoices;x64\Debug\uic;x64\Debug\uic\src\View\Common;x64\Debug\uic\src\View\ContinueChoose;x64\Debug\uic\src\View\CreateVideos;x64\Debug\uic\src\View\DisplayVideos;x64\Debug\uic\src\View\ThreeChoices</Qt_INCLUDEPATH_>
+      >$(Qt_INCLUDEPATH_);x64\Debug\moc;x64\Debug\moc\src\Module\QtWidget;x64\Debug\moc\src\View\ContinueChoose;x64\Debug\moc\src\View\CreateVideos;x64\Debug\moc\src\View\DisplayVideos;x64\Debug\moc\src\View\Common;x64\Debug\moc\src\View\ThreeChoices;x64\Debug\uic;x64\Debug\uic\src\View\Common;x64\Debug\uic\src\View\ContinueChoose;x64\Debug\uic\src\View\CreateVideos;x64\Debug\uic\src\View\DisplayVideos;x64\Debug\uic\src\View\ThreeChoices</Qt_INCLUDEPATH_>
     <QtBkup_QtInstall
       >msvc2017_64</QtBkup_QtInstall>
     <QtBkup_QtModules

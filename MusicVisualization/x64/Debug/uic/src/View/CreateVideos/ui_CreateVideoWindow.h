@@ -9,12 +9,12 @@
 #ifndef UI_CREATEVIDEOWINDOW_H
 #define UI_CREATEVIDEOWINDOW_H
 
+#include <F:\MIProject\MusicVisualization\MusicVisualization\src\Module\QtWidget\respushbutton.h>
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -25,7 +25,7 @@ class Ui_CreateVideoWindow
 {
 public:
     QWidget *widget_background;
-    QPushButton *btn_back;
+    ResPushButton *btn_back;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
     QSlider *hs_pulse_react;
@@ -40,13 +40,13 @@ public:
     QLabel *label_7;
     QLabel *label_8;
     QLabel *label_9;
-    QPushButton *btn_upload_music;
+    ResPushButton *btn_upload_music;
     QLabel *label_10;
     QComboBox *comboBox;
     QLabel *label_11;
-    QPushButton *btn_generate;
-    QPushButton *btn_completed;
-    QPushButton *btn_play;
+    ResPushButton *btn_generate;
+    ResPushButton *btn_completed;
+    ResPushButton *btn_play;
     QSlider *horizontalSlider;
     QLabel *label_12;
     QLabel *label_positionTime;
@@ -66,7 +66,7 @@ public:
         widget_background->setObjectName(QString::fromUtf8("widget_background"));
         widget_background->setGeometry(QRect(0, 0, 1000, 560));
         widget_background->setStyleSheet(QString::fromUtf8("background-color: rgb(248, 249, 250);"));
-        btn_back = new QPushButton(widget_background);
+        btn_back = new ResPushButton(widget_background);
         btn_back->setObjectName(QString::fromUtf8("btn_back"));
         btn_back->setGeometry(QRect(10, 10, 40, 40));
         btn_back->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
@@ -86,7 +86,7 @@ public:
 "background:transparent;\n"
 "}\n"
 "QSlider::handle:horizontal {\n"
-"background: rgb(255,255,255);\n"
+"background: rgb(160,160,160);\n"
 "width:8px;\n"
 "height:8px;\n"
 "border-radius:4px;\n"
@@ -94,7 +94,7 @@ public:
 "margin-bottom:7px;\n"
 "}\n"
 "QSlider::sub-page:horizontal {\n"
-"background:rgb(255,255,255);\n"
+"background: rgb(160,160,160);\n"
 "margin-top:9px;\n"
 "margin-bottom:9px;\n"
 "}\n"
@@ -104,7 +104,7 @@ public:
 "margin-bottom:9px;\n"
 "}\n"
 "QSlider::handle:horizontal:pressed {\n"
-"background: rgb(255,255,255);\n"
+"background: rgb(160,160,160);\n"
 "width:8px;\n"
 "height:8px;\n"
 "border-radius:4px;\n"
@@ -210,7 +210,7 @@ public:
         label_9 = new QLabel(widget_background);
         label_9->setObjectName(QString::fromUtf8("label_9"));
         label_9->setGeometry(QRect(310, 230, 16, 16));
-        btn_upload_music = new QPushButton(widget_background);
+        btn_upload_music = new ResPushButton(widget_background);
         btn_upload_music->setObjectName(QString::fromUtf8("btn_upload_music"));
         btn_upload_music->setGeometry(QRect(90, 60, 40, 40));
         btn_upload_music->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
@@ -226,17 +226,19 @@ public:
         label_11 = new QLabel(widget_background);
         label_11->setObjectName(QString::fromUtf8("label_11"));
         label_11->setGeometry(QRect(180, 70, 71, 16));
-        btn_generate = new QPushButton(widget_background);
+        btn_generate = new ResPushButton(widget_background);
         btn_generate->setObjectName(QString::fromUtf8("btn_generate"));
         btn_generate->setGeometry(QRect(380, 490, 100, 40));
-        btn_generate->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        btn_generate->setFocusPolicy(Qt::NoFocus);
+        btn_generate->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0);"));
         btn_generate->setIconSize(QSize(100, 40));
-        btn_completed = new QPushButton(widget_background);
+        btn_completed = new ResPushButton(widget_background);
         btn_completed->setObjectName(QString::fromUtf8("btn_completed"));
         btn_completed->setGeometry(QRect(510, 490, 100, 40));
-        btn_completed->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        btn_completed->setFocusPolicy(Qt::NoFocus);
+        btn_completed->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0);"));
         btn_completed->setIconSize(QSize(100, 40));
-        btn_play = new QPushButton(widget_background);
+        btn_play = new ResPushButton(widget_background);
         btn_play->setObjectName(QString::fromUtf8("btn_play"));
         btn_play->setGeometry(QRect(380, 435, 40, 40));
         btn_play->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));

@@ -3,6 +3,7 @@
 #include "../../Model/CreateDataModel.h"
 #include <QWidget>
 #include "ui_CreateVideoWindow.h"
+#include "ReminderWidget.h"
 
 class CreateVideoWindow : public QWidget
 {
@@ -39,5 +40,6 @@ private slots:
 private:
 	Ui::CreateVideoWindow ui;
 	CreateVideo m_cv;
+	ReminderWidget * rWidget;
 	static CreateVideoWindow* m_cvWindow;
 };

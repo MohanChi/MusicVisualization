@@ -8,8 +8,8 @@ public:
 	MyHttp();
 	~MyHttp();
 
-	void PostJsonDataToServer(std::string serverUrl, std::string jsonData);
-	void PostFileToServer(std::string serverUrl, std::string filename);
+	int PostJsonDataToServer(std::string serverUrl, std::string jsonData);
+	int PostFileToServer(std::string serverUrl, std::string filename);
 
 	void GetFileFromServer(std::string serverUrl, std::string outFilename);
 private:

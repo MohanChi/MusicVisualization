@@ -51,6 +51,8 @@ void CreateVideoWindow::SetInitialData(CreateVideo cv)
 
 void CreateVideoWindow::SetInitialUI()
 {
+	rWidget = new ReminderWidget(this);
+	rWidget->hide();
 	ui.btn_back->InitialStyleSheet(QPixmap(":/MusicVisualization/img/circle_goback.png"));
 	ui.btn_upload_music->InitialStyleSheet(QPixmap(":/MusicVisualization/img/upload.png"));
 	ui.btn_play->InitialStyleSheet(QPixmap(":/MusicVisualization/img/play.png"));
@@ -63,7 +65,16 @@ void CreateVideoWindow::slot_OnBtnGenerateClicked()
 	CreateDataModel cdm;
 	cdm.UpdateCreateVideosData(m_cv);
 	CreateVideoControl cvControl;
-	cvControl.SendMusicParametersAndMusicToServer(m_cv);
+	if (cvControl.SendMusicParametersAndMusicToServer(m_cv) == 0)
+	{
+		rWidget->SetLabelText("Gooooooooooooood");
+		rWidget->show();
+	} 
+	else
+	{
+		rWidget->SetLabelText("Baaaaaaaaaaaaaad");
+		rWidget->show();
+	}
 }
 
 void CreateVideoWindow::slot_OnBtnUploadMusic()
@@ -72,7 +83,10 @@ void CreateVideoWindow::slot_OnBtnUploadMusic()
 		QString::fromLocal8Bit("choose a music file"), ".mp3");
 	if (!filepath.isEmpty())
 	{
+		ui.label_tick->setPixmap(QPixmap(":/MusicVisualization/img/circle_tick.png"));
 		m_cv.musicname = filepath.toLocal8Bit().toStdString();
+		rWidget->SetLabelText("Upload music successfully!");
+		rWidget->show();
 	}
 }
 

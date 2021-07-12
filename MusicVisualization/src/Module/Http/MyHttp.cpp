@@ -14,7 +14,7 @@ MyHttp::~MyHttp()
 {
 }
 
-void MyHttp::PostJsonDataToServer(std::string serverUrl, std::string jsonData)
+int MyHttp::PostJsonDataToServer(std::string serverUrl, std::string jsonData)
 {
 	CURL* curl = NULL;
 	CURLcode res = CURLE_OK;
@@ -39,12 +39,15 @@ void MyHttp::PostJsonDataToServer(std::string serverUrl, std::string jsonData)
 		curl_slist_free_all(headers);
 		curl_easy_cleanup(curl);
 		curl_global_cleanup();
+		return res;
 	}
+	return -1;
 }
 
-void MyHttp::PostFileToServer(std::string serverUrl, std::string filename)
+int MyHttp::PostFileToServer(std::string serverUrl, std::string filename)
 {
 	CURL *curl = curl_easy_init();
+	CURLcode res = CURLE_OK;
 	if (curl)
 	{
 		// use multi-parts form post
@@ -75,13 +78,15 @@ void MyHttp::PostFileToServer(std::string serverUrl, std::string filename)
 		
 		headerlist = curl_slist_append(headerlist, buf);
 		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headerlist);
-		auto b = curl_easy_setopt(curl, CURLOPT_HTTPPOST, post);
-		auto c = curl_easy_perform(curl);
+		curl_easy_setopt(curl, CURLOPT_HTTPPOST, post);
+		res = curl_easy_perform(curl);
 
 		curl_formfree(post);
 		curl_easy_cleanup(curl);
 		curl_global_cleanup();
+		return res;
 	}
+	return -1;
 }
 
 void MyHttp::GetFileFromServer(std::string serverUrl, std::string outFilename)

@@ -72,7 +72,7 @@ void CreateVideoWindow::slot_OnBtnGenerateClicked()
 	} 
 	else
 	{
-		rWidget->SetLabelText("Baaaaaaaaaaaaaad");
+		rWidget->SetLabelText("Could not connect to the server, please try again!");
 		rWidget->show();
 	}
 }

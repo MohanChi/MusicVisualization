@@ -44,6 +44,7 @@ private:
 	int playerState;
 	int totalTime;
 	int sliderValue;
+	int totalSize;
 
 	static DisplayVideosWindow * m_dvWindow;
 };

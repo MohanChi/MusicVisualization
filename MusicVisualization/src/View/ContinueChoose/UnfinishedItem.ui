@@ -1,52 +1,71 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <ui version="4.0">
- <class>UnfinishedItem</class>
- <widget class="QWidget" name="UnfinishedItem">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>500</width>
-    <height>60</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string>UnfinishedItem</string>
-  </property>
-  <widget class="QWidget" name="widget_backgound" native="true">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>500</width>
-     <height>60</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 178, 139);</string>
-   </property>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>21</y>
-      <width>71</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Times New Roman</family>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
-  </widget>
- </widget>
- <layoutdefault spacing="6" margin="11"/>
- <resources/>
- <connections/>
+    <class>UnfinishedItem</class>
+    <widget class="QWidget" name="UnfinishedItem">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>500</width>
+                <height>60</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string>UnfinishedItem</string>
+        </property>
+        <widget class="QWidget" name="widget_backgound" native="true">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>661</width>
+                    <height>60</height>
+                </rect>
+            </property>
+            <property name="styleSheet">
+                <string notr="true" />
+            </property>
+            <widget class="QLabel" name="label_filename">
+                <property name="geometry">
+                    <rect>
+                        <x>30</x>
+                        <y>21</y>
+                        <width>91</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="font">
+                    <font>
+                        <family>Arial</family>
+                        <pointsize>12</pointsize>
+                    </font>
+                </property>
+                <property name="text">
+                    <string>TextLabel</string>
+                </property>
+            </widget>
+            <widget class="QLabel" name="label_musicPath">
+                <property name="geometry">
+                    <rect>
+                        <x>220</x>
+                        <y>20</y>
+                        <width>231</width>
+                        <height>21</height>
+                    </rect>
+                </property>
+                <property name="font">
+                    <font>
+                        <family>Arial</family>
+                        <pointsize>12</pointsize>
+                    </font>
+                </property>
+                <property name="text">
+                    <string />
+                </property>
+            </widget>
+        </widget>
+    </widget>
+    <layoutdefault spacing="6" margin="11" />
+    <resources />
+    <connections />
 </ui>

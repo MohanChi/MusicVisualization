@@ -18,30 +18,49 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>500</width>
+     <width>661</width>
      <height>60</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 178, 139);</string>
+    <string notr="true"/>
    </property>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="label_filename">
     <property name="geometry">
      <rect>
       <x>30</x>
       <y>21</y>
-      <width>71</width>
+      <width>91</width>
       <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Times New Roman</family>
+      <family>Arial</family>
       <pointsize>12</pointsize>
      </font>
     </property>
     <property name="text">
      <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_musicPath">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>20</y>
+      <width>231</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>

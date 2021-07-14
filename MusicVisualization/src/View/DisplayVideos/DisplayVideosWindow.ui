@@ -13,9 +13,6 @@
   <property name="windowTitle">
    <string>DisplayVideosWindow</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">background-color: rgb(248, 249, 250);</string>
-  </property>
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
@@ -37,7 +34,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="ResPushButton" name="btn_back">
+  <widget class="QPushButton" name="btn_back">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -53,7 +50,7 @@
     <string/>
    </property>
   </widget>
-  <widget class="ResPushButton" name="btn_play">
+  <widget class="QPushButton" name="btn_play">
    <property name="geometry">
     <rect>
      <x>390</x>
@@ -116,13 +113,13 @@ margin-bottom:7px;
     <enum>Qt::Horizontal</enum>
    </property>
   </widget>
-  <widget class="ResPushButton" name="btn_modify">
+  <widget class="QPushButton" name="btn_modify">
    <property name="geometry">
     <rect>
      <x>870</x>
-     <y>500</y>
-     <width>100</width>
-     <height>40</height>
+     <y>490</y>
+     <width>120</width>
+     <height>50</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -171,38 +168,8 @@ margin-bottom:7px;
     <string>/</string>
    </property>
   </widget>
-  <widget class="QWidget" name="widget" native="true">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1000</width>
-     <height>560</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(248, 249, 250);</string>
-   </property>
-  </widget>
-  <zorder>widget</zorder>
-  <zorder>verticalLayoutWidget</zorder>
-  <zorder>listWidget</zorder>
-  <zorder>btn_back</zorder>
-  <zorder>btn_play</zorder>
-  <zorder>horizontalSlider</zorder>
-  <zorder>btn_modify</zorder>
-  <zorder>label_positionTime</zorder>
-  <zorder>label_totalTime</zorder>
-  <zorder>label</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>ResPushButton</class>
-   <extends>QPushButton</extends>
-   <header location="global">F:\MIProject\MusicVisualization\MusicVisualization\src\Module\QtWidget\respushbutton.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -48,10 +48,8 @@ void DisplayVideosWindow::InitializeUI()
 	videoWidget = new QVideoWidget();
 	ui.verticalLayout->addWidget(videoWidget);
 	player->setVideoOutput(videoWidget);
+	
 	ui.horizontalSlider->setSingleStep(1);
-	ui.btn_back->InitialStyleSheet(QPixmap(":/MusicVisualization/img/circle_goback.png"));
-	ui.btn_play->InitialStyleSheet(QPixmap(":/MusicVisualization/img/play.png"));
-
 	QObject::connect(player, SIGNAL(durationChanged(qint64)), this, SLOT(slot_DurationChanged(qint64)));
 	QObject::connect(player, SIGNAL(positionChanged(qint64)), this, SLOT(slot_PositionChanged(qint64)));
 }
@@ -60,8 +58,7 @@ void DisplayVideosWindow::SetVideoList()
 {
 	QString UID = "112233";
 	QString path = "F:\\MIProject\\1.mp4";
-	totalSize = 5;
-	for (int i = 0; i < totalSize; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		VideoItem* mitem = new VideoItem(this); //input this window
 		QListWidgetItem *item = new QListWidgetItem();
@@ -146,20 +143,6 @@ void DisplayVideosWindow::slot_SliderValueChanged(int value)
 
 void DisplayVideosWindow::OnBtnItemSelected(int row)
 {
-	VideoItem *item;
-	for (int i = 0; i < totalSize; i++)
-	{
-		if (i == row)
-		{
-			item = (VideoItem*)ui.listWidget->itemWidget(ui.listWidget->item(i));
-		}
-		else
-		{
-			item = (VideoItem*)ui.listWidget->itemWidget(ui.listWidget->item(i));
-			item->SetUnSelectedUI();
-		}
-	}
-
 	player->setMedia(QUrl::fromLocalFile("F:\\MIProject\\1.mp4"));
 	videoWidget->show();
 	playerState = QMediaPlayer::StoppedState;

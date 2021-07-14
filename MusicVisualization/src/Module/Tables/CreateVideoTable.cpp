@@ -65,12 +65,12 @@ CreateVideo CreateVideoTable::SelectCreateVideo(std::string filename)
 	{
 		if (res.column == 6)
 		{
-			cv.filename = res.result[6];
-			cv.musicname = res.result[7];
-			cv.style = res.result[8];
-			cv.pulse_react = atof(res.result[9]);
-			cv.motion_react = atof(res.result[10]);
-			cv.contrast_strength = atof(res.result[11]);
+			cv.filename = res.result[5];
+			cv.musicname = res.result[6];
+			cv.style = res.result[7];
+			cv.pulse_react = atof(res.result[8]);
+			cv.motion_react = atof(res.result[9]);
+			cv.contrast_strength = atof(res.result[10]);
 		}
 		else
 		{

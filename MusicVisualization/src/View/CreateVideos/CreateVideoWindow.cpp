@@ -37,7 +37,6 @@ void CreateVideoWindow::SetInitialData(CreateVideo cv)
 {
 	m_cv.filename = cv.filename;
 	m_cv.musicname = cv.musicname;
-	m_cv.style = cv.style;
 	m_cv.pulse_react = cv.pulse_react;
 	m_cv.motion_react = cv.motion_react;
 	m_cv.contrast_strength = cv.contrast_strength;
@@ -48,14 +47,6 @@ void CreateVideoWindow::SetInitialData(CreateVideo cv)
 	ui.dsb_pulse_react->setValue(cv.pulse_react);
 	ui.dsb_motion_react->setValue(cv.motion_react);
 	ui.dsb_contrast_strength->setValue(cv.contrast_strength);
-	if (!m_cv.musicname.empty())
-	{
-		ui.label_tick->setPixmap(QPixmap(":/MusicVisualization/img/circle_tick.png"));
-	}
-	if (!m_cv.style.empty())
-	{
-		
-	}
 }
 
 void CreateVideoWindow::SetInitialUI()

@@ -23,7 +23,6 @@ public:
 	~VideoItem();
 
 	void SetVideoItemData(int row, QString UID, QString path);
-	void SetUnSelectedUI();
 
 private:
 	void mousePressEvent(QMouseEvent * event);

@@ -27,12 +27,6 @@ CreateVideoVec CreateDataModel::GetAllCreateVideos()
 	return cvt.SelectAllCreateVideos();
 }
 
-CreateVideo CreateDataModel::GetCreateVideo(std::string filename)
-{
-	CreateVideoTable cvt;
-	return cvt.SelectCreateVideo(filename);
-}
-
 void CreateDataModel::UpdateCreateVideosData(CreateVideo cv)
 {
 	CreateVideoTable cvt;

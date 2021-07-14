@@ -15,9 +15,7 @@ public:
 	UnfinishedItem(ContinueChooseWindow * window, QWidget* parent = nullptr);
 	~UnfinishedItem();
 
-	void SetItemData(int row, QString filename, QString musicname);
-	void SetUnSelectedUI();
-	QString GetItemFilename();
+	void SetItemData(int row, QString text);
 
 private:
 	void mousePressEvent(QMouseEvent * event);
@@ -26,5 +24,4 @@ private:
 	Ui::UnfinishedItem ui;
 	ContinueChooseWindow* window;
 	int row;
-	QString filename;
 };

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>549</height>
+    <height>560</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,15 +23,15 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(248, 249, 250);</string>
+    <string notr="true">background-color: rgb(166, 163, 170);</string>
    </property>
-   <widget class="ResPushButton" name="btn_OK">
+   <widget class="QPushButton" name="btn_OK">
     <property name="geometry">
      <rect>
       <x>460</x>
-      <y>490</y>
-      <width>100</width>
-      <height>40</height>
+      <y>470</y>
+      <width>101</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -40,14 +40,8 @@
     <property name="text">
      <string/>
     </property>
-    <property name="iconSize">
-     <size>
-      <width>100</width>
-      <height>40</height>
-     </size>
-    </property>
    </widget>
-   <widget class="ResPushButton" name="btn_back">
+   <widget class="QPushButton" name="btn_back">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -62,71 +56,20 @@
     <property name="text">
      <string/>
     </property>
-    <property name="iconSize">
-     <size>
-      <width>40</width>
-      <height>40</height>
-     </size>
-    </property>
    </widget>
    <widget class="QListWidget" name="listWidget">
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>90</y>
+      <y>60</y>
       <width>661</width>
       <height>381</height>
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>230</x>
-      <y>60</y>
-      <width>101</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Project Name</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>510</x>
-      <y>60</y>
-      <width>101</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Music Path</string>
-    </property>
-   </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>ResPushButton</class>
-   <extends>QPushButton</extends>
-   <header location="global">F:\MIProject\MusicVisualization\MusicVisualization\src\Module\QtWidget\respushbutton.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -17,5 +17,6 @@
         <file>img/play.png</file>
         <file>img/Slider.png</file>
         <file>img/upload.png</file>
+        <file>img/caret_down.png</file>
     </qresource>
 </RCC>

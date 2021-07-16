@@ -54,7 +54,11 @@ void CreateVideoWindow::SetInitialData(CreateVideo cv)
 	}
 	if (!m_cv.style.empty())
 	{
-
+		int index = ui.comboBox->findText(QString::fromStdString(m_cv.style));
+		if (index != -1)
+		{
+			ui.comboBox->setCurrentIndex(index);
+		}
 	}
 }
 

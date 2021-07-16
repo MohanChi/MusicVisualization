@@ -19,25 +19,27 @@ QT_BEGIN_NAMESPACE
 class Ui_VideoItem
 {
 public:
-    QLabel *label_UID;
-    QLabel *label_path;
+    QWidget *widget;
+    QLabel *label_filename;
+    QLabel *label_musicPath;
 
     void setupUi(QWidget *VideoItem)
     {
         if (VideoItem->objectName().isEmpty())
             VideoItem->setObjectName(QString::fromUtf8("VideoItem"));
         VideoItem->resize(370, 70);
-        VideoItem->setStyleSheet(QString::fromUtf8("background-color: rgb(161, 161, 161);"));
-        label_UID = new QLabel(VideoItem);
-        label_UID->setObjectName(QString::fromUtf8("label_UID"));
-        label_UID->setGeometry(QRect(10, 20, 101, 31));
-        label_UID->setStyleSheet(QString::fromUtf8("background-color: rgb(74, 74, 74);\n"
-"color: rgb(255, 255, 255);"));
-        label_path = new QLabel(VideoItem);
-        label_path->setObjectName(QString::fromUtf8("label_path"));
-        label_path->setGeometry(QRect(120, 20, 241, 31));
-        label_path->setStyleSheet(QString::fromUtf8("background-color: rgb(74, 74, 74);\n"
-"color: rgb(255, 255, 255);"));
+        VideoItem->setStyleSheet(QString::fromUtf8(""));
+        widget = new QWidget(VideoItem);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(0, 0, 370, 70));
+        label_filename = new QLabel(widget);
+        label_filename->setObjectName(QString::fromUtf8("label_filename"));
+        label_filename->setGeometry(QRect(30, 20, 81, 31));
+        label_filename->setStyleSheet(QString::fromUtf8("color: rgb(73, 80, 87)"));
+        label_musicPath = new QLabel(widget);
+        label_musicPath->setObjectName(QString::fromUtf8("label_musicPath"));
+        label_musicPath->setGeometry(QRect(180, 20, 171, 31));
+        label_musicPath->setStyleSheet(QString::fromUtf8("color: rgb(73, 80, 87)"));
 
         retranslateUi(VideoItem);
 
@@ -47,8 +49,8 @@ public:
     void retranslateUi(QWidget *VideoItem)
     {
         VideoItem->setWindowTitle(QApplication::translate("VideoItem", "VideoItem", nullptr));
-        label_UID->setText(QString());
-        label_path->setText(QString());
+        label_filename->setText(QString());
+        label_musicPath->setText(QString());
     } // retranslateUi
 
 };

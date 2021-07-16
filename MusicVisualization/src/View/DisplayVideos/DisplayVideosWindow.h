@@ -25,7 +25,7 @@ public:
 	void OnBtnItemSelected(int row);
 
 private:
-	void InitializeUI(); 
+	void InitializeUI();
 	DisplayVideosWindow(QWidget * parent);
 	void SetVideoList();
 
@@ -44,6 +44,7 @@ private:
 	int playerState;
 	int totalTime;
 	int sliderValue;
+	int totalSize;
 
 	static DisplayVideosWindow * m_dvWindow;
 };

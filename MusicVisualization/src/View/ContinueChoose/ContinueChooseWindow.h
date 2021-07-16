@@ -22,13 +22,16 @@ public:
 
 public:
 	void InitializeUI();
+	void SetInitializeItem();
 	void OnBtnItemSelected(int row);
 
 private slots:
 	void slot_OnBtnBackClicked();
+	void slot_OnBtnOKClicked();
 
 private:
 	Ui::ContinueChooseWindow ui;
-
+	int totalSize;
+	std::string chooseFilename;
 	static ContinueChooseWindow* m_ccWindow;
 };

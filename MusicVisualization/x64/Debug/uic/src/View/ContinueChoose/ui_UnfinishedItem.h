@@ -20,7 +20,8 @@ class Ui_UnfinishedItem
 {
 public:
     QWidget *widget_backgound;
-    QLabel *label;
+    QLabel *label_filename;
+    QLabel *label_musicPath;
 
     void setupUi(QWidget *UnfinishedItem)
     {
@@ -29,15 +30,19 @@ public:
         UnfinishedItem->resize(500, 60);
         widget_backgound = new QWidget(UnfinishedItem);
         widget_backgound->setObjectName(QString::fromUtf8("widget_backgound"));
-        widget_backgound->setGeometry(QRect(0, 0, 500, 60));
-        widget_backgound->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 178, 139);"));
-        label = new QLabel(widget_backgound);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(30, 21, 71, 21));
+        widget_backgound->setGeometry(QRect(0, 0, 661, 60));
+        widget_backgound->setStyleSheet(QString::fromUtf8(""));
+        label_filename = new QLabel(widget_backgound);
+        label_filename->setObjectName(QString::fromUtf8("label_filename"));
+        label_filename->setGeometry(QRect(30, 21, 91, 21));
         QFont font;
-        font.setFamily(QString::fromUtf8("Times New Roman"));
+        font.setFamily(QString::fromUtf8("Arial"));
         font.setPointSize(12);
-        label->setFont(font);
+        label_filename->setFont(font);
+        label_musicPath = new QLabel(widget_backgound);
+        label_musicPath->setObjectName(QString::fromUtf8("label_musicPath"));
+        label_musicPath->setGeometry(QRect(220, 20, 231, 21));
+        label_musicPath->setFont(font);
 
         retranslateUi(UnfinishedItem);
 
@@ -47,7 +52,8 @@ public:
     void retranslateUi(QWidget *UnfinishedItem)
     {
         UnfinishedItem->setWindowTitle(QApplication::translate("UnfinishedItem", "UnfinishedItem", nullptr));
-        label->setText(QApplication::translate("UnfinishedItem", "TextLabel", nullptr));
+        label_filename->setText(QApplication::translate("UnfinishedItem", "TextLabel", nullptr));
+        label_musicPath->setText(QString());
     } // retranslateUi
 
 };

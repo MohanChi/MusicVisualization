@@ -15,7 +15,7 @@ CreateVideoWindow::CreateVideoWindow(QWidget *parent)
 	QObject::connect(ui.btn_back, SIGNAL(clicked()), this, SLOT(slot_OnBtnBackClicked()));
 	QObject::connect(ui.btn_generate, SIGNAL(clicked()), this, SLOT(slot_OnBtnGenerateClicked()));
 	QObject::connect(ui.btn_upload_music, SIGNAL(clicked()), this, SLOT(slot_OnBtnUploadMusic()));
-	QObject::connect(ui.hs_pulse_react, SIGNAL(valueChanged(int)), this, 
+	QObject::connect(ui.hs_pulse_react, SIGNAL(valueChanged(int)), this,
 		SLOT(slot_SliderPulseReact(int)));
 	QObject::connect(ui.dsb_pulse_react, SIGNAL(valueChanged(double)), this,
 		SLOT(slot_DSBPulseReact(double)));
@@ -37,6 +37,7 @@ void CreateVideoWindow::SetInitialData(CreateVideo cv)
 {
 	m_cv.filename = cv.filename;
 	m_cv.musicname = cv.musicname;
+	m_cv.style = cv.style;
 	m_cv.pulse_react = cv.pulse_react;
 	m_cv.motion_react = cv.motion_react;
 	m_cv.contrast_strength = cv.contrast_strength;
@@ -47,6 +48,18 @@ void CreateVideoWindow::SetInitialData(CreateVideo cv)
 	ui.dsb_pulse_react->setValue(cv.pulse_react);
 	ui.dsb_motion_react->setValue(cv.motion_react);
 	ui.dsb_contrast_strength->setValue(cv.contrast_strength);
+	if (!m_cv.musicname.empty())
+	{
+		ui.label_tick->setPixmap(QPixmap(":/MusicVisualization/img/circle_tick.png"));
+	}
+	if (!m_cv.style.empty())
+	{
+		int index = ui.comboBox->findText(QString::fromStdString(m_cv.style));
+		if (index != -1)
+		{
+			ui.comboBox->setCurrentIndex(index);
+		}
+	}
 }
 
 void CreateVideoWindow::SetInitialUI()
@@ -69,7 +82,7 @@ void CreateVideoWindow::slot_OnBtnGenerateClicked()
 	{
 		rWidget->SetLabelText("Gooooooooooooood");
 		rWidget->show();
-	} 
+	}
 	else
 	{
 		rWidget->SetLabelText("Could not connect to the server, please try again!");

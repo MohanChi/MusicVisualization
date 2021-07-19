@@ -18,7 +18,7 @@ public:
 		int arcHeight, QRgb color);
 
 	int angle = 0;
-	bool bBlue = true;
+	bool bGrey = true;
 	QTimer * timer;
 	int angleCount = 0;
 	bool isCancelled;

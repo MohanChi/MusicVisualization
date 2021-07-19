@@ -4,6 +4,8 @@
 #include <QWidget>
 #include "ui_CreateVideoWindow.h"
 #include "ReminderWidget.h"
+#include "WaitingLoadingWindow.h"
+#include <qtimer.h>
 
 class CreateVideoWindow : public QWidget
 {
@@ -24,6 +26,7 @@ public:
 
 private:
 	void SetInitialUI();
+	void AskServerForVideo();
 
 private slots:
 	void slot_OnBtnBackClicked();
@@ -36,10 +39,14 @@ private slots:
 	void slot_DSBMotionReact(double value);
 	void slot_DSBContrastStrength(double value);
 	void slot_StyleComboBox(const QString & text);
+	void slot_TimeOut();
 
 private:
 	Ui::CreateVideoWindow ui;
 	CreateVideo m_cv;
 	ReminderWidget * rWidget;
+	WaitingLoadingWindow *wlWindow;
+	QTimer * timer;
+	int timess;
 	static CreateVideoWindow* m_cvWindow;
 };

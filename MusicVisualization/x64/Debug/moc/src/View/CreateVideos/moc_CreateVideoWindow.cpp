@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_CreateVideoWindow_t {
-    QByteArrayData data[14];
-    char stringdata0[256];
+    QByteArrayData data[15];
+    char stringdata0[269];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -44,7 +44,8 @@ QT_MOC_LITERAL(9, 168, 18), // "slot_DSBPulseReact"
 QT_MOC_LITERAL(10, 187, 19), // "slot_DSBMotionReact"
 QT_MOC_LITERAL(11, 207, 24), // "slot_DSBContrastStrength"
 QT_MOC_LITERAL(12, 232, 18), // "slot_StyleComboBox"
-QT_MOC_LITERAL(13, 251, 4) // "text"
+QT_MOC_LITERAL(13, 251, 4), // "text"
+QT_MOC_LITERAL(14, 256, 12) // "slot_TimeOut"
 
     },
     "CreateVideoWindow\0slot_OnBtnBackClicked\0"
@@ -54,7 +55,7 @@ QT_MOC_LITERAL(13, 251, 4) // "text"
     "slot_SliderContrastStrength\0"
     "slot_DSBPulseReact\0slot_DSBMotionReact\0"
     "slot_DSBContrastStrength\0slot_StyleComboBox\0"
-    "text"
+    "text\0slot_TimeOut"
 };
 #undef QT_MOC_LITERAL
 
@@ -64,7 +65,7 @@ static const uint qt_meta_data_CreateVideoWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      10,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -72,16 +73,17 @@ static const uint qt_meta_data_CreateVideoWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   64,    2, 0x08 /* Private */,
-       3,    0,   65,    2, 0x08 /* Private */,
-       4,    0,   66,    2, 0x08 /* Private */,
-       5,    1,   67,    2, 0x08 /* Private */,
-       7,    1,   70,    2, 0x08 /* Private */,
-       8,    1,   73,    2, 0x08 /* Private */,
-       9,    1,   76,    2, 0x08 /* Private */,
-      10,    1,   79,    2, 0x08 /* Private */,
-      11,    1,   82,    2, 0x08 /* Private */,
-      12,    1,   85,    2, 0x08 /* Private */,
+       1,    0,   69,    2, 0x08 /* Private */,
+       3,    0,   70,    2, 0x08 /* Private */,
+       4,    0,   71,    2, 0x08 /* Private */,
+       5,    1,   72,    2, 0x08 /* Private */,
+       7,    1,   75,    2, 0x08 /* Private */,
+       8,    1,   78,    2, 0x08 /* Private */,
+       9,    1,   81,    2, 0x08 /* Private */,
+      10,    1,   84,    2, 0x08 /* Private */,
+      11,    1,   87,    2, 0x08 /* Private */,
+      12,    1,   90,    2, 0x08 /* Private */,
+      14,    0,   93,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -94,6 +96,7 @@ static const uint qt_meta_data_CreateVideoWindow[] = {
     QMetaType::Void, QMetaType::Double,    6,
     QMetaType::Void, QMetaType::Double,    6,
     QMetaType::Void, QMetaType::QString,   13,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -114,6 +117,7 @@ void CreateVideoWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 7: _t->slot_DSBMotionReact((*reinterpret_cast< double(*)>(_a[1]))); break;
         case 8: _t->slot_DSBContrastStrength((*reinterpret_cast< double(*)>(_a[1]))); break;
         case 9: _t->slot_StyleComboBox((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 10: _t->slot_TimeOut(); break;
         default: ;
         }
     }
@@ -148,13 +152,13 @@ int CreateVideoWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 10)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 10)
+        if (_id < 11)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 10;
+        _id -= 11;
     }
     return _id;
 }

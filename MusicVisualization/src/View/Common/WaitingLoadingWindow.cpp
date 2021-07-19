@@ -34,15 +34,15 @@ void WaitingLoadingWindow::paintEvent(QPaintEvent * event)
 	double hd = height() >> 1;
 
 	painter.translate(width() >> 1, height() >> 1);
-	if (bBlue)
+	if (bGrey)
 	{
-		gradientArc(&painter, radius, 0, angle, arcHeight, qRgb(0, 160, 233));
-		gradientArc(&painter, radius, angle, 360 - angle, arcHeight, qRgb(60, 60, 60));
+		gradientArc(&painter, radius, 0, angle, arcHeight, qRgb(73, 80, 87));
+		gradientArc(&painter, radius, angle, 360 - angle, arcHeight, qRgb(150, 150, 150));
 	}
 	else
 	{
-		gradientArc(&painter, radius, 0, angle, arcHeight, qRgb(60, 60, 60));
-		gradientArc(&painter, radius, angle, 360 - angle, arcHeight, qRgb(0, 160, 233));
+		gradientArc(&painter, radius, 0, angle, arcHeight, qRgb(150, 150, 150));
+		gradientArc(&painter, radius, angle, 360 - angle, arcHeight, qRgb(73, 80, 87));
 	}
 
 	QRadialGradient gradient(0, 0, 151);
@@ -68,7 +68,7 @@ void WaitingLoadingWindow::paintEvent(QPaintEvent * event)
 	pen.setWidth(3);
 	painter.strokePath(path, pen);
 	painter.drawPath(path);
-	painter.fillPath(path, QBrush(QColor("#00A0E9")));
+	painter.fillPath(path, QBrush(QColor("#495057")));
 }
 
 void WaitingLoadingWindow::gradientArc(QPainter * painter, int radius, int startAngle, 
@@ -96,7 +96,7 @@ void WaitingLoadingWindow::InitialUI()
 	setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
 	//this->setStyleSheet("background-color:rgba(0, 0, 0, 225)");
 	setAttribute(Qt::WA_TranslucentBackground, true);
-	//ui.widget_background->setStyleSheet("background-color:rgba(0, 0, 0, 100)");
+	ui.widget_background->setStyleSheet("background-color:rgba(10, 10, 10, 100)");
 }
 
 void WaitingLoadingWindow::timerDoing()
@@ -104,7 +104,7 @@ void WaitingLoadingWindow::timerDoing()
 	angleCount += 3;
 	if (angleCount > 360)
 	{
-		this->bBlue = !this->bBlue;
+		this->bGrey = !this->bGrey;
 		angleCount = 0;
 		this->angle = angleCount;
 	}

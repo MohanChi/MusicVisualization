@@ -46,7 +46,7 @@ DBStatus CreateVideoTable::UpdateCreateVideo(CreateVideo new_Cr)
 	std::string sql;
 	sql = "UPDATE " + GetTableName() + " SET "
 		+ "musicname = \'" + new_Cr.musicname + "\', "
-		+ "musicname = \'" + new_Cr.style + "\', "
+		+ "style = \'" + new_Cr.style + "\', "
 		+ "pulse_react = " + std::to_string(new_Cr.pulse_react) + ", "
 		+ "motion_react = " + std::to_string(new_Cr.motion_react) + ", "
 		+ "contrast_strength = " + std::to_string(new_Cr.contrast_strength) + " "

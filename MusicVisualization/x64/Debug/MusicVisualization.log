@@ -1,7 +1,2 @@
-﻿  uic src\View\CreateVideos\CreateVideoWindow.ui
-  ContinueChooseWindow.cpp
-  CreateVideoWindow.cpp
-  NewNameWindow.cpp
-  DisplayVideosWindow.cpp
-  moc_CreateVideoWindow.cpp
+﻿  WaitingLoadingWindow.cpp
   MusicVisualization.vcxproj -> F:\MIProject\MusicVisualization\x64\Debug\MusicVisualization.exe

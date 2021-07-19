@@ -34,7 +34,7 @@ public:
         widget_background = new QWidget(TopWindow);
         widget_background->setObjectName(QString::fromUtf8("widget_background"));
         widget_background->setGeometry(QRect(0, 0, 1000, 40));
-        widget_background->setStyleSheet(QString::fromUtf8("background-color:rgba(20, 20, 20, 255)"));
+        widget_background->setStyleSheet(QString::fromUtf8("background-color:rgba(50, 50, 50, 255)"));
         btn_close = new ResPushButton(widget_background);
         btn_close->setObjectName(QString::fromUtf8("btn_close"));
         btn_close->setGeometry(QRect(960, 5, 30, 30));
@@ -47,8 +47,9 @@ public:
         btn_min->setIconSize(QSize(30, 30));
         label_icon = new QLabel(widget_background);
         label_icon->setObjectName(QString::fromUtf8("label_icon"));
-        label_icon->setGeometry(QRect(5, 5, 151, 30));
-        label_icon->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        label_icon->setGeometry(QRect(5, 5, 150, 30));
+        label_icon->setStyleSheet(QString::fromUtf8(""));
+        label_icon->setPixmap(QPixmap(QString::fromUtf8(":/MusicVisualization/img/MusicVisualization.png")));
         widget_container = new QWidget(TopWindow);
         widget_container->setObjectName(QString::fromUtf8("widget_container"));
         widget_container->setGeometry(QRect(0, 40, 1000, 560));

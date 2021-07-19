@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgba(20, 20, 20, 255)</string>
+    <string notr="true">background-color:rgba(50, 50, 50, 255)</string>
    </property>
    <widget class="ResPushButton" name="btn_close">
     <property name="geometry">
@@ -74,15 +74,18 @@
      <rect>
       <x>5</x>
       <y>5</y>
-      <width>151</width>
+      <width>150</width>
       <height>30</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../../../MusicVisualization.qrc">:/MusicVisualization/img/MusicVisualization.png</pixmap>
     </property>
    </widget>
   </widget>
@@ -108,6 +111,8 @@
    <header location="global">F:\MIProject\MusicVisualization\MusicVisualization\src\Module\QtWidget\respushbutton.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../../../MusicVisualization.qrc"/>
+ </resources>
  <connections/>
 </ui>

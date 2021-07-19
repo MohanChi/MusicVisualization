@@ -26,13 +26,13 @@ public:
     {
         if (WaitingLoadingWindow->objectName().isEmpty())
             WaitingLoadingWindow->setObjectName(QString::fromUtf8("WaitingLoadingWindow"));
-        WaitingLoadingWindow->resize(800, 600);
+        WaitingLoadingWindow->resize(1000, 560);
         label = new WaitImageWidget(WaitingLoadingWindow);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(0, 40, 800, 601));
+        label->setGeometry(QRect(0, 0, 1000, 560));
         widget_background = new QWidget(WaitingLoadingWindow);
         widget_background->setObjectName(QString::fromUtf8("widget_background"));
-        widget_background->setGeometry(QRect(0, 40, 800, 600));
+        widget_background->setGeometry(QRect(0, 0, 1000, 560));
         widget_background->raise();
         label->raise();
 

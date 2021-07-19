@@ -4,6 +4,7 @@
 #include "../Controller/CreateVideoControl.h"
 #include <QFileDialog>
 #include <qpixmap.h>
+#include <thread>
 
 CreateVideoWindow* CreateVideoWindow::m_cvWindow = nullptr;
 
@@ -12,6 +13,10 @@ CreateVideoWindow::CreateVideoWindow(QWidget *parent)
 {
 	ui.setupUi(this);
 	SetInitialUI();
+	timer = new QTimer(this);
+	connect(timer, SIGNAL(timeout()), this, SLOT(slot_TimeOut()));
+	timess = 0;
+
 	QObject::connect(ui.btn_back, SIGNAL(clicked()), this, SLOT(slot_OnBtnBackClicked()));
 	QObject::connect(ui.btn_generate, SIGNAL(clicked()), this, SLOT(slot_OnBtnGenerateClicked()));
 	QObject::connect(ui.btn_upload_music, SIGNAL(clicked()), this, SLOT(slot_OnBtnUploadMusic()));
@@ -73,6 +78,10 @@ void CreateVideoWindow::SetInitialUI()
 	ui.btn_completed->InitialStyleSheet(QPixmap(":/MusicVisualization/img/Complete.png"));
 }
 
+void CreateVideoWindow::AskServerForVideo()
+{
+}
+
 void CreateVideoWindow::slot_OnBtnGenerateClicked()
 {
 	CreateDataModel cdm;
@@ -80,14 +89,20 @@ void CreateVideoWindow::slot_OnBtnGenerateClicked()
 	CreateVideoControl cvControl;
 	if (cvControl.SendMusicParametersAndMusicToServer(m_cv) == 0)
 	{
-		rWidget->SetLabelText("Gooooooooooooood");
-		rWidget->show();
+		TopWindow* tWindow = TopWindow::GetInstance();
+		wlWindow = new WaitingLoadingWindow();
+		wlWindow->setParent(tWindow->GetWidgetContainer());
+		wlWindow->show();
+		std::thread t(&CreateVideoWindow::AskServerForVideo, this);
+		t.detach();
+		timer->start(100);
 	}
 	else
 	{
 		rWidget->SetLabelText("Could not connect to the server, please try again!");
 		rWidget->show();
 	}
+	
 }
 
 void CreateVideoWindow::slot_OnBtnUploadMusic()
@@ -142,6 +157,16 @@ void CreateVideoWindow::slot_DSBContrastStrength(double value)
 void CreateVideoWindow::slot_StyleComboBox(const QString & text)
 {
 	m_cv.style = text.toStdString();
+}
+
+void CreateVideoWindow::slot_TimeOut()
+{
+	timess++;
+	if (timess == 100)
+	{
+		wlWindow->hide();
+		timer->stop();
+	}
 }
 
 void CreateVideoWindow::slot_OnBtnBackClicked()

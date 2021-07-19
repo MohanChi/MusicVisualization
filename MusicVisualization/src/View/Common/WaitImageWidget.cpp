@@ -20,7 +20,7 @@ void WaitImageWidget::paintEvent(QPaintEvent * event)
 	painter.translate(width() >> 1, height() >> 1);
 	if (bBlue)
 	{
-		gradientArc(&painter, radius, 0, angle, arcHeight, qRgb(0, 160, 233));
+		gradientArc(&painter, radius, 0, angle, arcHeight, qRgb(73, 80, 87));
 		gradientArc(&painter, radius, angle, 360 - angle, arcHeight, qRgb(60, 60, 60));
 	}
 	else
@@ -44,15 +44,15 @@ void WaitImageWidget::paintEvent(QPaintEvent * event)
 	painter.setBrush(gradient);
 	painter.drawEllipse(-151, -151, 302, 302);
 
-	QString valueStrNumber = QString::fromLocal8Bit("µ»¥˝÷–...");
+	QString valueStrNumber = QString::fromLocal8Bit("Waiting...");
 	QRectF inRect(-170, -175, 350, 350);
 	//QFont m2 = QFont("∞¢¿Ô∞Õ∞Õ∆’ª›ÃÂ R", 26, QFont::Bold);
 	//painter.setFont(m2);
 	//painter.setPen(QColor("#000000"));
 	//painter.drawText(inRect, Qt::AlignCenter, valueStrNumber);
-	QFont m = QFont("∞¢¿Ô∞Õ∞Õ∆’ª›ÃÂ R", 25, QFont::Bold);
+	QFont m = QFont("Aril", 25, QFont::Bold);
 	painter.setFont(m);
-	painter.setPen(QColor("#00A0E9"));
+	painter.setPen(QColor("#495057"));
 	painter.drawText(inRect, Qt::AlignCenter, valueStrNumber);
 
 

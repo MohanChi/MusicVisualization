@@ -7,7 +7,9 @@ public:
 	CreateVideoControl();
 	~CreateVideoControl();
 
-	int SendMusicParametersAndMusicToServer(CreateVideo cv);
+	int SendMusicParametersToServer(CreateVideo cv);
+	int SendMusicToServer(CreateVideo cv);
+	int GetVideoFromServer(CreateVideo cv);
 
 private:
 

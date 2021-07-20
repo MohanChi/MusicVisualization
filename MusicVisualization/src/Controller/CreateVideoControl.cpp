@@ -11,18 +11,23 @@ CreateVideoControl::~CreateVideoControl()
 {
 }
 
-int CreateVideoControl::SendMusicParametersAndMusicToServer(CreateVideo cv)
+int CreateVideoControl::SendMusicParametersToServer(CreateVideo cv)
 {
 	MyHttp myHttp;
 	JsonDataModel jdModel;
-	int res0 = myHttp.PostJsonDataToServer(postParameterURL, jdModel.FormCreateVideoJsonData(cv));
-	int res1 = myHttp.PostFileToServer(postMusicURL, cv.musicname);
-	if (res0 == 0 && res1 == 0)
-	{
-		return 0;
-	}
-	else
-	{
-		return -1;
-	}
+	return myHttp.PostJsonDataToServer(postParameterURL, jdModel.FormCreateVideoJsonData(cv));
+}
+
+int CreateVideoControl::SendMusicToServer(CreateVideo cv)
+{
+	MyHttp myHttp;
+	JsonDataModel jdModel;
+	return myHttp.PostFileToServer(postMusicURL, cv.musicname);
+}
+
+int CreateVideoControl::GetVideoFromServer(CreateVideo cv)
+{
+	MyHttp myHttp;
+	JsonDataModel jdModel;
+	return myHttp.GetFileFromServer(getVideoURL, cv.filename);
 }

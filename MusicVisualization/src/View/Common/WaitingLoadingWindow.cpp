@@ -8,6 +8,11 @@ WaitingLoadingWindow::WaitingLoadingWindow(QWidget *parent) : QWidget(parent)
 	timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(timerDoing()));
 	timer->start(50);
+	connect(ui.btn_cancel, SIGNAL(clicked()), this, SLOT(slot_OnBtnCancel()));
+	isCancelled = false;
+	bGrey = true;
+	angle = 0;
+	angleCount = 0;
 }
 
 WaitingLoadingWindow::~WaitingLoadingWindow()
@@ -97,6 +102,7 @@ void WaitingLoadingWindow::InitialUI()
 	//this->setStyleSheet("background-color:rgba(0, 0, 0, 225)");
 	setAttribute(Qt::WA_TranslucentBackground, true);
 	ui.widget_background->setStyleSheet("background-color:rgba(10, 10, 10, 100)");
+	ui.btn_cancel->InitialStyleSheet(QPixmap(":/MusicVisualization/img/cancel.png"));
 }
 
 void WaitingLoadingWindow::timerDoing()
@@ -113,4 +119,9 @@ void WaitingLoadingWindow::timerDoing()
 		this->angle = angleCount;
 	}
 	this->update();
+}
+
+void WaitingLoadingWindow::slot_OnBtnCancel()
+{
+	isCancelled = true;
 }

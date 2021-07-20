@@ -36,11 +36,33 @@
     </rect>
    </property>
   </widget>
+  <widget class="ResPushButton" name="btn_cancel">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>460</y>
+     <width>100</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <zorder>widget_background</zorder>
   <zorder>label</zorder>
+  <zorder>btn_cancel</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
+  <customwidget>
+   <class>ResPushButton</class>
+   <extends>QPushButton</extends>
+   <header location="global">F:\MIProject\MusicVisualization\MusicVisualization\src\Module\QtWidget\respushbutton.h</header>
+  </customwidget>
   <customwidget>
    <class>WaitImageWidget</class>
    <extends>QLabel</extends>

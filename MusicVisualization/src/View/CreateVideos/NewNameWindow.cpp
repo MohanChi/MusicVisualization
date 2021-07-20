@@ -56,11 +56,11 @@ void NewNameWindow::slot_OnBtnOKClicked()
 		{
 			this->setParent(nullptr);
 			this->hide();
-			CreateVideoWindow* cvWindow = CreateVideoWindow::GetInstance();
 			CreateVideo cv;
 			cv.filename = ui.lineEdit->text().toStdString();
-			cvWindow->SetInitialData(cv);
 			TopWindow* tWindow = TopWindow::GetInstance();
+			CreateVideoWindow* cvWindow = CreateVideoWindow::GetInstance(tWindow->GetWidgetContainer());
+			cvWindow->SetInitialData(cv);
 			cvWindow->setParent(tWindow->GetWidgetContainer());
 			cvWindow->show();
 		}

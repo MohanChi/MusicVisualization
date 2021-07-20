@@ -67,10 +67,10 @@ void ContinueChooseWindow::slot_OnBtnOKClicked()
 {
 	this->setParent(nullptr);
 	this->hide();
-	CreateVideoWindow* cvWindow = CreateVideoWindow::GetInstance();
+	TopWindow* tWindow = TopWindow::GetInstance();
+	CreateVideoWindow* cvWindow = CreateVideoWindow::GetInstance(tWindow->GetWidgetContainer());
 	CreateDataModel cdModel;
 	cvWindow->SetInitialData(cdModel.GetCreateVideo(chooseFilename));
-	TopWindow* tWindow = TopWindow::GetInstance();
 	cvWindow->setParent(tWindow->GetWidgetContainer());
 	cvWindow->show();
 }

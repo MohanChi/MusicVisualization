@@ -1,6 +1,8 @@
 #include "MyHttp.h"
 #include <curl/curl.h>
 #include <fstream>
+#include <direct.h>
+#include <io.h>
 
 #define MAX_CONN_TIMEOUT 20
 #define MAX_TIMEOUT 1000
@@ -79,6 +81,7 @@ int MyHttp::PostFileToServer(std::string serverUrl, std::string filename)
 		headerlist = curl_slist_append(headerlist, buf);
 		curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headerlist);
 		curl_easy_setopt(curl, CURLOPT_HTTPPOST, post);
+		//curl_easy_setopt(curl, CURLOPT_TIMEOUT, 5);
 		res = curl_easy_perform(curl);
 
 		curl_formfree(post);
@@ -89,14 +92,24 @@ int MyHttp::PostFileToServer(std::string serverUrl, std::string filename)
 	return -1;
 }
 
-void MyHttp::GetFileFromServer(std::string serverUrl, std::string outFilename)
+int MyHttp::GetFileFromServer(std::string serverUrl, std::string outFilename)
 {
-	FILE* fp = fopen(outFilename.c_str(), "wb");
+	/*std::string folderPath = "AppData\\" + outFilename;
+
+	if (0 != access(folderPath.c_str(), 0))
+	{
+		mkdir(folderPath.c_str());
+	}*/
+	//std::string filepath = folderPath + "\\" + outFilename + ".mp4";
+	std::string filepath = "AppData\\" + outFilename + ".mp4";
+	FILE* fp = fopen(filepath.c_str(), "wb");
 	if (!fp) {
 		std::cout << "Create file failed" << std::endl;
+		return -1;
 	}
 
 	CURL *curl = curl_easy_init();
+	CURLcode res = CURLE_OK;
 	if (curl)
 	{
 		// set params  
@@ -111,9 +124,9 @@ void MyHttp::GetFileFromServer(std::string serverUrl, std::string outFilename)
 		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, true);
 		curl_easy_setopt(curl, CURLOPT_HEADER, false);
 		curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, MAX_CONN_TIMEOUT); // set transport and time out time  
-		curl_easy_setopt(curl, CURLOPT_TIMEOUT, 3);
+		curl_easy_setopt(curl, CURLOPT_TIMEOUT, 5);
 		// start req  
-		curl_easy_perform(curl);
+		res = curl_easy_perform(curl);
 		fflush(fp);
 		fseek(fp, 0, SEEK_END);
 		int nDown = ftell(fp);
@@ -122,6 +135,7 @@ void MyHttp::GetFileFromServer(std::string serverUrl, std::string outFilename)
 	
 	// release curl  
 	curl_easy_cleanup(curl);
+	return res;
 
 }
 

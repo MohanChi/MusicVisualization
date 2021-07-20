@@ -17,17 +17,15 @@ public:
 	void gradientArc(QPainter * painter, int radius, int startAngle, int angleLength,
 		int arcHeight, QRgb color);
 
-	int angle = 0;
-	bool bGrey = true;
-	QTimer * timer;
-	int angleCount = 0;
+	bool bGrey;
 	bool isCancelled;
+	int angle;
+	int angleCount;
+	QTimer * timer;
 
 public slots:
 	void timerDoing();
-
-//private slots:
-//	void OnBtnCancel();
+	void slot_OnBtnCancel();
 
 private:
 	void InitialUI();

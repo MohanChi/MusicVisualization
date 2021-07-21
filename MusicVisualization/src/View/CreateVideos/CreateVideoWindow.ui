@@ -757,9 +757,9 @@ QComboBox::down-arrow:on {
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>435</y>
-      <width>40</width>
-      <height>40</height>
+      <y>440</y>
+      <width>30</width>
+      <height>30</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -770,8 +770,8 @@ QComboBox::down-arrow:on {
     </property>
     <property name="iconSize">
      <size>
-      <width>40</width>
-      <height>40</height>
+      <width>30</width>
+      <height>30</height>
      </size>
     </property>
    </widget>

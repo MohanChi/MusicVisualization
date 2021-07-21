@@ -5,7 +5,6 @@
 #include <QtMultimediaWidgets/qvideowidget.h>
 #include "ui_DisplayVideosWindow.h"
 
-
 class DisplayVideosWindow : public QWidget
 {
 	Q_OBJECT

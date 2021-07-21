@@ -1,20 +1,19 @@
 #pragma once
 
 #include "../../Model/CreateDataModel.h"
-#include <QWidget>
-#include "ui_CreateVideoWindow.h"
 #include "ReminderWidget.h"
 #include "WaitingLoadingWindow.h"
+#include <QWidget>
 #include <qtimer.h>
 #include <QtMultimedia/qmediaplayer.h>
 #include <QtMultimediaWidgets/qvideowidget.h>
+#include "ui_CreateVideoWindow.h"
 
 class CreateVideoWindow : public QWidget
 {
 	Q_OBJECT
 
 public:
-	CreateVideoWindow(QWidget *parent = Q_NULLPTR);
 	~CreateVideoWindow();
 
 	static CreateVideoWindow * GetInstance(QWidget * parent = NULL)
@@ -27,7 +26,8 @@ public:
 	void SetInitialData(CreateVideo cv);
 
 private:
-	void SetInitialUI();
+	CreateVideoWindow(QWidget *parent = Q_NULLPTR);
+	void InitialUI();
 	void AskServerForVideo();
 
 private slots:
@@ -43,7 +43,7 @@ private slots:
 	void slot_DSBContrastStrength(double value);
 	void slot_StyleComboBox(const QString & text);
 	void slot_TimeOut();
-	void slot_DurationChnged(qint64 playtime);
+	void slot_DurationChanged(qint64 playtime);
 	void slot_PositionChanged(qint64 playtime);
 	void slot_SliderValueChanged(int value);
 
@@ -54,7 +54,8 @@ private:
 	WaitingLoadingWindow *wlWindow;
 	QTimer * timer;
 	bool threadEnd;
-	int timess;
+	bool generationEnd;
+
 	QMediaPlayer *player;
 	QVideoWidget *videoWidget;
 	int playerState;

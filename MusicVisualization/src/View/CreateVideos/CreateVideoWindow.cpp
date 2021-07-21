@@ -15,11 +15,10 @@ CreateVideoWindow::CreateVideoWindow(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
-	SetInitialUI();
 	timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(slot_TimeOut()));
-	timess = 0;
 	threadEnd = false;
+	generationEnd = false;
 
 	QObject::connect(ui.btn_back, SIGNAL(clicked()), this, SLOT(slot_OnBtnBackClicked()));
 	QObject::connect(ui.btn_generate, SIGNAL(clicked()), this, SLOT(slot_OnBtnGenerateClicked()));
@@ -40,6 +39,9 @@ CreateVideoWindow::CreateVideoWindow(QWidget *parent)
 		this, SLOT(slot_SliderValueChanged(int)));
 	QObject::connect(ui.comboBox, SIGNAL(currentIndexChanged(const QString)),
 		this, SLOT(slot_StyleComboBox(const QString)));
+	QObject::connect(ui.btn_play, SIGNAL(clicked()), this, SLOT(slot_OnBtnPlayClicked()));
+
+	InitialUI();
 }
 
 CreateVideoWindow::~CreateVideoWindow()
@@ -74,9 +76,10 @@ void CreateVideoWindow::SetInitialData(CreateVideo cv)
 		}
 	}
 	playerState = QMediaPlayer::StoppedState;
+	player->stop();
 }
 
-void CreateVideoWindow::SetInitialUI()
+void CreateVideoWindow::InitialUI()
 {
 	rWidget = new ReminderWidget(this);
 	rWidget->hide();
@@ -108,11 +111,7 @@ void CreateVideoWindow::AskServerForVideo()
 		if (cvControl.GetVideoFromServer(m_cv) == 0)
 		{
 			threadEnd = true;
-			std::string videoPath = "AppData\\" + m_cv.filename + ".mp4";
-			player->setMedia(QUrl::fromLocalFile(QString::fromStdString(videoPath)));
-			videoWidget->show();
-			playerState = QMediaPlayer::StoppedState;
-			sliderValue = 0;
+			generationEnd = true;
 		}
 		else
 		{
@@ -120,7 +119,6 @@ void CreateVideoWindow::AskServerForVideo()
 			rWidget->SetLabelText("Generation failed, please try again");
 			rWidget->show();
 		}
-		
 	}
 }
 
@@ -144,7 +142,6 @@ void CreateVideoWindow::slot_OnBtnGenerateClicked()
 		rWidget->SetLabelText("Could not connect to the server, please try again!");
 		rWidget->show();
 	}
-	
 }
 
 void CreateVideoWindow::slot_OnBtnUploadMusicClicked()
@@ -217,15 +214,34 @@ void CreateVideoWindow::slot_StyleComboBox(const QString & text)
 
 void CreateVideoWindow::slot_TimeOut()
 {
-	if (threadEnd = true || wlWindow->GetIsCancelled())
+	if (threadEnd)
 	{
 		wlWindow->hide();
 		timer->stop();
+		if (generationEnd)
+		{
+			playerState = QMediaPlayer::StoppedState;
+			player->stop();
+			std::string videoPath = "AppData\\" + m_cv.filename + ".mp4";
+			player->setMedia(QUrl::fromLocalFile(QString::fromStdString(videoPath)));
+			videoWidget->show();
+			sliderValue = 0;
+			//player->play();
+			generationEnd = false;
+		}
+		threadEnd = false;
 	}
-	
+	else if (wlWindow->GetIsCancelled())
+	{
+		wlWindow->hide();
+		timer->stop();
+
+		rWidget->SetLabelText("Generation is cancelled");
+		rWidget->show();
+	}
 }
 
-void CreateVideoWindow::slot_DurationChnged(qint64 playtime)
+void CreateVideoWindow::slot_DurationChanged(qint64 playtime)
 {
 	int h, m, s;
 	totalTime = playtime;

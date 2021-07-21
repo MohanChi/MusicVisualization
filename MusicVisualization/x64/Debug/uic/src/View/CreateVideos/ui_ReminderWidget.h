@@ -41,7 +41,7 @@ public:
         btn_OK->setIconSize(QSize(100, 40));
         label = new QLabel(widget_background);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(70, 40, 241, 51));
+        label->setGeometry(QRect(70, 20, 241, 81));
         QFont font;
         font.setFamily(QString::fromUtf8("Times New Roman"));
         font.setPointSize(11);

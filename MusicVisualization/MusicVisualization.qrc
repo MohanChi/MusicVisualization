@@ -19,5 +19,6 @@
         <file>img/upload.png</file>
         <file>img/caret_down.png</file>
         <file>img/MusicVisualization.png</file>
+        <file>img/save.png</file>
     </qresource>
 </RCC>

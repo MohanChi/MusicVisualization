@@ -19,9 +19,22 @@ std::string JsonDataModel::FormCreateVideoJsonData(CreateVideo cv)
 	QJsonObject obj;
 	obj.insert("filename", cv.filename.c_str());
 	obj.insert("style", cv.style.c_str());
+	obj.insert("speed_fpm", cv.speed_fpm);
 	obj.insert("pulse_react", cv.pulse_react);
 	obj.insert("motion_react", cv.motion_react);
+	obj.insert("motion_react", cv.motion_randomness);
 	obj.insert("contrast_strength", cv.contrast_strength);
+	obj.insert("contrast_strength", cv.class_pitch_react);
+	obj.insert("contrast_strength", cv.flash_strength);
+	obj.insert("contrast_strength", cv.pulse_percussive);
+	obj.insert("contrast_strength", cv.pulse_harmonic);
+	obj.insert("contrast_strength", cv.motion_percussive);
+	obj.insert("contrast_strength", cv.motion_harmonic);
+	obj.insert("contrast_strength", cv.flash_percussive);
+	obj.insert("contrast_strength", cv.contrast_percussive);
+	obj.insert("contrast_strength", cv.resolution);
+	obj.insert("contrast_strength", cv.start);
+	obj.insert("contrast_strength", cv.fps);
 
 	return (QJsonDocument(obj).toJson()).toStdString();
 }

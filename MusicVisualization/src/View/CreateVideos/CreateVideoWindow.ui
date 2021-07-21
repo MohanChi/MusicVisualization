@@ -61,9 +61,9 @@
    <widget class="QSlider" name="hs_pulse_react">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>110</y>
-      <width>250</width>
+      <x>105</x>
+      <y>160</y>
+      <width>211</width>
       <height>22</height>
      </rect>
     </property>
@@ -98,8 +98,14 @@ margin-top:7px;
 margin-bottom:7px;
 }</string>
     </property>
+    <property name="maximum">
+     <number>20</number>
+    </property>
     <property name="pageStep">
      <number>1</number>
+    </property>
+    <property name="value">
+     <number>5</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -108,9 +114,9 @@ margin-bottom:7px;
    <widget class="QSlider" name="hs_motion_react">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>160</y>
-      <width>250</width>
+      <x>105</x>
+      <y>200</y>
+      <width>211</width>
       <height>22</height>
      </rect>
     </property>
@@ -151,6 +157,9 @@ margin-bottom:7px;
     <property name="pageStep">
      <number>1</number>
     </property>
+    <property name="value">
+     <number>5</number>
+    </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
@@ -158,8 +167,8 @@ margin-bottom:7px;
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>130</y>
+      <x>105</x>
+      <y>175</y>
       <width>21</width>
       <height>16</height>
      </rect>
@@ -176,8 +185,8 @@ margin-bottom:7px;
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>305</x>
-      <y>130</y>
+      <x>310</x>
+      <y>175</y>
       <width>21</width>
       <height>20</height>
      </rect>
@@ -188,33 +197,15 @@ margin-bottom:7px;
      </font>
     </property>
     <property name="text">
-     <string>10</string>
+     <string>2</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>112</y>
-      <width>31</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>pulse</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>15</x>
+      <x>17</x>
       <y>160</y>
-      <width>41</width>
+      <width>71</width>
       <height>20</height>
      </rect>
     </property>
@@ -224,14 +215,32 @@ margin-bottom:7px;
      </font>
     </property>
     <property name="text">
-     <string>motion</string>
+     <string>pulse react</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>200</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>motion react</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>180</y>
+      <x>105</x>
+      <y>215</y>
       <width>21</width>
       <height>16</height>
      </rect>
@@ -249,7 +258,7 @@ margin-bottom:7px;
     <property name="geometry">
      <rect>
       <x>310</x>
-      <y>180</y>
+      <y>215</y>
       <width>16</width>
       <height>16</height>
      </rect>
@@ -267,9 +276,9 @@ margin-bottom:7px;
    <widget class="QSlider" name="hs_contrast_strength">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>210</y>
-      <width>250</width>
+      <x>105</x>
+      <y>280</y>
+      <width>211</width>
       <height>22</height>
      </rect>
     </property>
@@ -310,6 +319,9 @@ margin-bottom:7px;
     <property name="pageStep">
      <number>1</number>
     </property>
+    <property name="value">
+     <number>5</number>
+    </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
@@ -317,9 +329,9 @@ margin-bottom:7px;
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>210</y>
-      <width>51</width>
+      <x>5</x>
+      <y>280</y>
+      <width>91</width>
       <height>20</height>
      </rect>
     </property>
@@ -329,14 +341,14 @@ margin-bottom:7px;
      </font>
     </property>
     <property name="text">
-     <string>contrast</string>
+     <string>contrast strength</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>230</y>
+      <x>105</x>
+      <y>295</y>
       <width>21</width>
       <height>16</height>
      </rect>
@@ -354,7 +366,7 @@ margin-bottom:7px;
     <property name="geometry">
      <rect>
       <x>310</x>
-      <y>230</y>
+      <y>295</y>
       <width>16</width>
       <height>16</height>
      </rect>
@@ -731,7 +743,7 @@ QComboBox::down-arrow:on {
    <widget class="ResPushButton" name="btn_completed">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>860</x>
       <y>490</y>
       <width>100</width>
       <height>40</height>
@@ -874,8 +886,8 @@ margin-bottom:7px;
    <widget class="QDoubleSpinBox" name="dsb_pulse_react">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>110</y>
+      <x>325</x>
+      <y>160</y>
       <width>51</width>
       <height>22</height>
      </rect>
@@ -892,7 +904,7 @@ margin-bottom:7px;
      <number>1</number>
     </property>
     <property name="maximum">
-     <double>10.000000000000000</double>
+     <double>2.000000000000000</double>
     </property>
     <property name="singleStep">
      <double>0.100000000000000</double>
@@ -900,12 +912,15 @@ margin-bottom:7px;
     <property name="stepType">
      <enum>QAbstractSpinBox::DefaultStepType</enum>
     </property>
+    <property name="value">
+     <double>0.500000000000000</double>
+    </property>
    </widget>
    <widget class="QDoubleSpinBox" name="dsb_motion_react">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>160</y>
+      <x>325</x>
+      <y>200</y>
       <width>51</width>
       <height>22</height>
      </rect>
@@ -923,13 +938,16 @@ margin-bottom:7px;
     </property>
     <property name="singleStep">
      <double>0.100000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.500000000000000</double>
     </property>
    </widget>
    <widget class="QDoubleSpinBox" name="dsb_contrast_strength">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>210</y>
+      <x>325</x>
+      <y>280</y>
       <width>51</width>
       <height>22</height>
      </rect>
@@ -947,6 +965,9 @@ margin-bottom:7px;
     </property>
     <property name="singleStep">
      <double>0.100000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.500000000000000</double>
     </property>
    </widget>
    <widget class="QLabel" name="label_filename">
@@ -993,6 +1014,877 @@ margin-bottom:7px;
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>speed fpm</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="hs_speed_fpm">
+    <property name="geometry">
+     <rect>
+      <x>105</x>
+      <y>120</y>
+      <width>211</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSlider::groove:horizontal {
+background:transparent;
+}
+QSlider::handle:horizontal {
+background: rgb(160,160,160);
+width:8px;
+height:8px;
+border-radius:4px;
+margin-top:7px;
+margin-bottom:7px;
+}
+QSlider::sub-page:horizontal {
+background: rgb(160,160,160);
+margin-top:9px;
+margin-bottom:9px;
+}
+QSlider::add-page:horizontal {
+background: rgb(60,60,60);
+margin-top:9px;
+margin-bottom:9px;
+}
+QSlider::handle:horizontal:pressed {
+background: rgb(160,160,160);
+width:8px;
+height:8px;
+border-radius:4px;
+margin-top:7px;
+margin-bottom:7px;
+}</string>
+    </property>
+    <property name="maximum">
+     <number>12</number>
+    </property>
+    <property name="pageStep">
+     <number>1</number>
+    </property>
+    <property name="value">
+     <number>12</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14">
+    <property name="geometry">
+     <rect>
+      <x>105</x>
+      <y>135</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_15">
+    <property name="geometry">
+     <rect>
+      <x>305</x>
+      <y>135</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>12</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="dsb_speed_fpm">
+    <property name="geometry">
+     <rect>
+      <x>325</x>
+      <y>120</y>
+      <width>51</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="decimals">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <double>12.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>1.000000000000000</double>
+    </property>
+    <property name="stepType">
+     <enum>QAbstractSpinBox::DefaultStepType</enum>
+    </property>
+    <property name="value">
+     <double>12.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_31">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>320</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>class pitch react</string>
+    </property>
+   </widget>
+   <widget class="ResPushButton" name="btn_save">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>490</y>
+      <width>100</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>40</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="cb_pulse_percussive">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>400</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>pulse percussive</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="cb_pulse_harmonic">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>440</y>
+      <width>111</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>pulse harmonic</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="cb_motion_percussive">
+    <property name="geometry">
+     <rect>
+      <x>125</x>
+      <y>400</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>motion percussive</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="cb_motion_harmonic">
+    <property name="geometry">
+     <rect>
+      <x>125</x>
+      <y>440</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>motion harmonic</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QSlider" name="hs_pitch_react">
+    <property name="geometry">
+     <rect>
+      <x>105</x>
+      <y>320</y>
+      <width>211</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSlider::groove:horizontal {
+background:transparent;
+}
+QSlider::handle:horizontal {
+background: rgb(160,160,160);
+width:8px;
+height:8px;
+border-radius:4px;
+margin-top:7px;
+margin-bottom:7px;
+}
+QSlider::sub-page:horizontal {
+background: rgb(160,160,160);
+margin-top:9px;
+margin-bottom:9px;
+}
+QSlider::add-page:horizontal {
+background: rgb(60,60,60);
+margin-top:9px;
+margin-bottom:9px;
+}
+QSlider::handle:horizontal:pressed {
+background: rgb(160,160,160);
+width:8px;
+height:8px;
+border-radius:4px;
+margin-top:7px;
+margin-bottom:7px;
+}</string>
+    </property>
+    <property name="maximum">
+     <number>20</number>
+    </property>
+    <property name="pageStep">
+     <number>1</number>
+    </property>
+    <property name="value">
+     <number>5</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="dsb_pitch_react">
+    <property name="geometry">
+     <rect>
+      <x>325</x>
+      <y>320</y>
+      <width>51</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="decimals">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <double>2.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.100000000000000</double>
+    </property>
+    <property name="stepType">
+     <enum>QAbstractSpinBox::DefaultStepType</enum>
+    </property>
+    <property name="value">
+     <double>0.500000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_16">
+    <property name="geometry">
+     <rect>
+      <x>105</x>
+      <y>335</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_17">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>335</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>2</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="cb_contrast_percussive">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>440</y>
+      <width>131</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>contrast percussive</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_32">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>360</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>flash strength</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="hs_flash_strength">
+    <property name="geometry">
+     <rect>
+      <x>105</x>
+      <y>360</y>
+      <width>211</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSlider::groove:horizontal {
+background:transparent;
+}
+QSlider::handle:horizontal {
+background: rgb(160,160,160);
+width:8px;
+height:8px;
+border-radius:4px;
+margin-top:7px;
+margin-bottom:7px;
+}
+QSlider::sub-page:horizontal {
+background: rgb(160,160,160);
+margin-top:9px;
+margin-bottom:9px;
+}
+QSlider::add-page:horizontal {
+background: rgb(60,60,60);
+margin-top:9px;
+margin-bottom:9px;
+}
+QSlider::handle:horizontal:pressed {
+background: rgb(160,160,160);
+width:8px;
+height:8px;
+border-radius:4px;
+margin-top:7px;
+margin-bottom:7px;
+}</string>
+    </property>
+    <property name="maximum">
+     <number>10</number>
+    </property>
+    <property name="pageStep">
+     <number>1</number>
+    </property>
+    <property name="value">
+     <number>5</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="dsb_flash_strength">
+    <property name="geometry">
+     <rect>
+      <x>325</x>
+      <y>360</y>
+      <width>51</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="decimals">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <double>1.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.100000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.500000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_18">
+    <property name="geometry">
+     <rect>
+      <x>105</x>
+      <y>375</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_19">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>375</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_20">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>240</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>motion random</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="hs_motion_randomness">
+    <property name="geometry">
+     <rect>
+      <x>105</x>
+      <y>240</y>
+      <width>211</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSlider::groove:horizontal {
+background:transparent;
+}
+QSlider::handle:horizontal {
+background: rgb(160,160,160);
+width:8px;
+height:8px;
+border-radius:4px;
+margin-top:7px;
+margin-bottom:7px;
+}
+QSlider::sub-page:horizontal {
+background: rgb(160,160,160);
+margin-top:9px;
+margin-bottom:9px;
+}
+QSlider::add-page:horizontal {
+background: rgb(60,60,60);
+margin-top:9px;
+margin-bottom:9px;
+}
+QSlider::handle:horizontal:pressed {
+background: rgb(160,160,160);
+width:8px;
+height:8px;
+border-radius:4px;
+margin-top:7px;
+margin-bottom:7px;
+}</string>
+    </property>
+    <property name="maximum">
+     <number>10</number>
+    </property>
+    <property name="pageStep">
+     <number>1</number>
+    </property>
+    <property name="value">
+     <number>5</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="dsb_motion_randomness">
+    <property name="geometry">
+     <rect>
+      <x>325</x>
+      <y>240</y>
+      <width>51</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="decimals">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <double>1.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.100000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.500000000000000</double>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="cb_flash_percussive">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>400</y>
+      <width>111</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>flash percussive</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="sb_resolution">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>480</y>
+      <width>51</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>360</number>
+    </property>
+    <property name="value">
+     <number>360</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_33">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>480</y>
+      <width>61</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>resolution</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_34">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>480</y>
+      <width>41</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>start</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="sb_start">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>480</y>
+      <width>51</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>10000</number>
+    </property>
+    <property name="singleStep">
+     <number>1</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_35">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>480</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>fps</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="sb_fps">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>480</y>
+      <width>51</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>10000</number>
+    </property>
+    <property name="singleStep">
+     <number>1</number>
+    </property>
+    <property name="value">
+     <number>43</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_21">
+    <property name="geometry">
+     <rect>
+      <x>105</x>
+      <y>255</y>
+      <width>21</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_22">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>255</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Alibaba PuHuiTi</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>1</string>
+    </property>
+   </widget>
+   <zorder>btn_back</zorder>
+   <zorder>verticalLayoutWidget</zorder>
+   <zorder>hs_pulse_react</zorder>
+   <zorder>hs_motion_react</zorder>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_5</zorder>
+   <zorder>label_6</zorder>
+   <zorder>hs_contrast_strength</zorder>
+   <zorder>label_7</zorder>
+   <zorder>label_8</zorder>
+   <zorder>label_9</zorder>
+   <zorder>btn_upload_music</zorder>
+   <zorder>label_10</zorder>
+   <zorder>comboBox</zorder>
+   <zorder>label_11</zorder>
+   <zorder>btn_generate</zorder>
+   <zorder>btn_completed</zorder>
+   <zorder>btn_play</zorder>
+   <zorder>horizontalSlider</zorder>
+   <zorder>label_12</zorder>
+   <zorder>label_positionTime</zorder>
+   <zorder>label_totalTime</zorder>
+   <zorder>dsb_pulse_react</zorder>
+   <zorder>dsb_motion_react</zorder>
+   <zorder>dsb_contrast_strength</zorder>
+   <zorder>label_filename</zorder>
+   <zorder>label_tick</zorder>
+   <zorder>label_13</zorder>
+   <zorder>hs_speed_fpm</zorder>
+   <zorder>label_14</zorder>
+   <zorder>label_15</zorder>
+   <zorder>dsb_speed_fpm</zorder>
+   <zorder>label_31</zorder>
+   <zorder>btn_save</zorder>
+   <zorder>cb_pulse_percussive</zorder>
+   <zorder>cb_pulse_harmonic</zorder>
+   <zorder>cb_motion_percussive</zorder>
+   <zorder>cb_motion_harmonic</zorder>
+   <zorder>hs_pitch_react</zorder>
+   <zorder>label_16</zorder>
+   <zorder>label_17</zorder>
+   <zorder>dsb_pitch_react</zorder>
+   <zorder>cb_contrast_percussive</zorder>
+   <zorder>label_32</zorder>
+   <zorder>hs_flash_strength</zorder>
+   <zorder>label_18</zorder>
+   <zorder>label_19</zorder>
+   <zorder>dsb_flash_strength</zorder>
+   <zorder>label_20</zorder>
+   <zorder>hs_motion_randomness</zorder>
+   <zorder>dsb_motion_randomness</zorder>
+   <zorder>cb_flash_percussive</zorder>
+   <zorder>label_33</zorder>
+   <zorder>sb_resolution</zorder>
+   <zorder>label_34</zorder>
+   <zorder>sb_start</zorder>
+   <zorder>label_35</zorder>
+   <zorder>sb_fps</zorder>
+   <zorder>label_21</zorder>
+   <zorder>label_22</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

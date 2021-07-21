@@ -9,6 +9,7 @@
 #ifndef UI_WAITINGLOADINGWINDOW_H
 #define UI_WAITINGLOADINGWINDOW_H
 
+#include <F:\MIProject\MusicVisualization\MusicVisualization\src\Module\QtWidget\respushbutton.h>
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QWidget>
@@ -21,6 +22,7 @@ class Ui_WaitingLoadingWindow
 public:
     WaitImageWidget *label;
     QWidget *widget_background;
+    ResPushButton *btn_cancel;
 
     void setupUi(QWidget *WaitingLoadingWindow)
     {
@@ -33,8 +35,13 @@ public:
         widget_background = new QWidget(WaitingLoadingWindow);
         widget_background->setObjectName(QString::fromUtf8("widget_background"));
         widget_background->setGeometry(QRect(0, 0, 1000, 560));
+        btn_cancel = new ResPushButton(WaitingLoadingWindow);
+        btn_cancel->setObjectName(QString::fromUtf8("btn_cancel"));
+        btn_cancel->setGeometry(QRect(440, 330, 100, 40));
+        btn_cancel->setFocusPolicy(Qt::NoFocus);
         widget_background->raise();
         label->raise();
+        btn_cancel->raise();
 
         retranslateUi(WaitingLoadingWindow);
 
@@ -45,6 +52,7 @@ public:
     {
         WaitingLoadingWindow->setWindowTitle(QApplication::translate("WaitingLoadingWindow", "WaitingLoadingWindow", nullptr));
         label->setText(QString());
+        btn_cancel->setText(QString());
     } // retranslateUi
 
 };

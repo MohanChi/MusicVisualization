@@ -113,7 +113,7 @@ int MyHttp::GetFileFromServer(std::string serverUrl, std::string outFilename)
 	if (curl)
 	{
 		// set params  
-		curl_easy_setopt(curl, CURLOPT_URL, serverUrl.c_str()); // url  
+		curl_easy_setopt(curl, CURLOPT_URL, (serverUrl + "/" + outFilename).c_str()); // url  
 		curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, false); // if want to use https  
 		curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, false); // set peer and host verify false  
 		curl_easy_setopt(curl, CURLOPT_VERBOSE, 1);
@@ -136,7 +136,6 @@ int MyHttp::GetFileFromServer(std::string serverUrl, std::string outFilename)
 	// release curl  
 	curl_easy_cleanup(curl);
 	return res;
-
 }
 
 size_t MyHttp::callback_write_file(void * ptr, size_t size, size_t nmemb, void * userdata)

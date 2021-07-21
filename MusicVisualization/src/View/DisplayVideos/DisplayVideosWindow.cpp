@@ -88,12 +88,12 @@ void DisplayVideosWindow::slot_OnBtnPlayClicked()
 
 void DisplayVideosWindow::slot_OnBtnModifyClicked()
 {
-	this->setParent(nullptr);
+	/*this->setParent(nullptr);
 	this->hide();
 	CreateVideoWindow* cvWindow = CreateVideoWindow::GetInstance();
 	TopWindow* tWindow = TopWindow::GetInstance();
 	cvWindow->setParent(tWindow->GetWidgetContainer());
-	cvWindow->show();
+	cvWindow->show();*/
 }
 
 void DisplayVideosWindow::slot_DurationChanged(qint64 playtime)

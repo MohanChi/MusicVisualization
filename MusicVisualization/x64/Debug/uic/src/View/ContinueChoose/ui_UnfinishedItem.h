@@ -27,7 +27,7 @@ public:
     {
         if (UnfinishedItem->objectName().isEmpty())
             UnfinishedItem->setObjectName(QString::fromUtf8("UnfinishedItem"));
-        UnfinishedItem->resize(500, 60);
+        UnfinishedItem->resize(661, 60);
         widget_backgound = new QWidget(UnfinishedItem);
         widget_backgound->setObjectName(QString::fromUtf8("widget_backgound"));
         widget_backgound->setGeometry(QRect(0, 0, 661, 60));
@@ -41,7 +41,7 @@ public:
         label_filename->setFont(font);
         label_musicPath = new QLabel(widget_backgound);
         label_musicPath->setObjectName(QString::fromUtf8("label_musicPath"));
-        label_musicPath->setGeometry(QRect(220, 20, 231, 21));
+        label_musicPath->setGeometry(QRect(220, 20, 421, 21));
         label_musicPath->setFont(font);
 
         retranslateUi(UnfinishedItem);

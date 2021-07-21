@@ -32,7 +32,7 @@ public:
     {
         if (ContinueChooseWindow->objectName().isEmpty())
             ContinueChooseWindow->setObjectName(QString::fromUtf8("ContinueChooseWindow"));
-        ContinueChooseWindow->resize(1000, 549);
+        ContinueChooseWindow->resize(1000, 560);
         widget_background = new QWidget(ContinueChooseWindow);
         widget_background->setObjectName(QString::fromUtf8("widget_background"));
         widget_background->setGeometry(QRect(0, 0, 1000, 560));
@@ -50,16 +50,17 @@ public:
         listWidget = new QListWidget(widget_background);
         listWidget->setObjectName(QString::fromUtf8("listWidget"));
         listWidget->setGeometry(QRect(180, 90, 661, 381));
+        listWidget->setStyleSheet(QString::fromUtf8(""));
         label = new QLabel(widget_background);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(230, 60, 101, 21));
+        label->setGeometry(QRect(200, 60, 101, 21));
         QFont font;
         font.setFamily(QString::fromUtf8("Arial"));
         font.setPointSize(12);
         label->setFont(font);
         label_2 = new QLabel(widget_background);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(510, 60, 101, 21));
+        label_2->setGeometry(QRect(450, 60, 101, 21));
         label_2->setFont(font);
 
         retranslateUi(ContinueChooseWindow);

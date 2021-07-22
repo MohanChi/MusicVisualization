@@ -22,19 +22,19 @@ std::string JsonDataModel::FormCreateVideoJsonData(CreateVideo cv)
 	obj.insert("speed_fpm", cv.speed_fpm);
 	obj.insert("pulse_react", cv.pulse_react);
 	obj.insert("motion_react", cv.motion_react);
-	obj.insert("motion_react", cv.motion_randomness);
+	obj.insert("motion_randomness", cv.motion_randomness);
 	obj.insert("contrast_strength", cv.contrast_strength);
-	obj.insert("contrast_strength", cv.class_pitch_react);
-	obj.insert("contrast_strength", cv.flash_strength);
-	obj.insert("contrast_strength", cv.pulse_percussive);
-	obj.insert("contrast_strength", cv.pulse_harmonic);
-	obj.insert("contrast_strength", cv.motion_percussive);
-	obj.insert("contrast_strength", cv.motion_harmonic);
-	obj.insert("contrast_strength", cv.flash_percussive);
-	obj.insert("contrast_strength", cv.contrast_percussive);
-	obj.insert("contrast_strength", cv.resolution);
-	obj.insert("contrast_strength", cv.start);
-	obj.insert("contrast_strength", cv.fps);
+	obj.insert("class_pitch_react", cv.class_pitch_react);
+	obj.insert("flash_strength", cv.flash_strength);
+	obj.insert("pulse_percussive", cv.pulse_percussive);
+	obj.insert("pulse_harmonic", cv.pulse_harmonic);
+	obj.insert("motion_percussive", cv.motion_percussive);
+	obj.insert("motion_harmonic", cv.motion_harmonic);
+	obj.insert("flash_percussive", cv.flash_percussive);
+	obj.insert("contrast_percussive", cv.contrast_percussive);
+	obj.insert("resolution", cv.resolution);
+	obj.insert("start", cv.start);
+	obj.insert("fps", cv.fps);
 
 	return (QJsonDocument(obj).toJson()).toStdString();
 }

@@ -13,6 +13,7 @@ ContinueChooseWindow::ContinueChooseWindow(QWidget *parent)
 	ui.setupUi(this);
 	InitializeUI();
 	SetInitializeItem();
+	chooseFilename = "";
 
 	QObject::connect(ui.btn_back, SIGNAL(clicked()), this, SLOT(slot_OnBtnBackClicked()));
 	QObject::connect(ui.btn_OK, SIGNAL(clicked()), this, SLOT(slot_OnBtnOKClicked()));
@@ -65,6 +66,10 @@ void ContinueChooseWindow::OnBtnItemSelected(int row)
 
 void ContinueChooseWindow::slot_OnBtnOKClicked()
 {
+	if (chooseFilename == "")
+	{
+		return;
+	}
 	this->setParent(nullptr);
 	this->hide();
 	TopWindow* tWindow = TopWindow::GetInstance();

@@ -26,6 +26,7 @@ CreateVideoWindow::CreateVideoWindow(QWidget *parent)
 	QObject::connect(ui.comboBox, SIGNAL(currentIndexChanged(const QString)),
 		this, SLOT(slot_StyleComboBox(const QString)));
 	QObject::connect(ui.btn_play, SIGNAL(clicked()), this, SLOT(slot_OnBtnPlayClicked()));
+	QObject::connect(ui.btn_save, SIGNAL(clicked()), this, SLOT(slot_OnBtnSaveClicked()));
 
 	QObject::connect(ui.hs_speed_fpm, SIGNAL(valueChanged(int)), this,
 		SLOT(slot_SliderSpeedFpm(int)));
@@ -115,14 +116,18 @@ void CreateVideoWindow::SetInitialData(CreateVideo cv)
 	m_cv.fps = cv.fps;
 
 	ui.label_filename->setText(QString::fromStdString(cv.filename));
+
+	ui.hs_speed_fpm->setValue(cv.speed_fpm);
+	ui.dsb_speed_fpm->setValue(cv.speed_fpm);
+
 	ui.hs_pulse_react->setValue(cv.pulse_react * 10);
 	ui.hs_motion_react->setValue(cv.motion_react * 10);
 	ui.hs_motion_randomness->setValue(cv.motion_randomness * 10);
 	ui.hs_contrast_strength->setValue(cv.contrast_strength * 10);
 	ui.hs_pitch_react->setValue(cv.class_pitch_react * 10);
 	ui.hs_flash_strength->setValue(cv.flash_strength * 10);
-	ui.dsb_pulse_react->setValue(cv.pulse_react);
 
+	ui.dsb_pulse_react->setValue(cv.pulse_react);
 	ui.dsb_motion_react->setValue(cv.motion_react);
 	ui.dsb_motion_randomness->setValue(cv.motion_randomness);
 	ui.dsb_contrast_strength->setValue(cv.contrast_strength);
@@ -154,12 +159,16 @@ void CreateVideoWindow::SetInitialData(CreateVideo cv)
 	}
 	playerState = QMediaPlayer::StoppedState;
 	player->stop();
+	videoWidget->hide();
 }
 
 void CreateVideoWindow::SetFileName(std::string filename)
 {
 	m_cv.filename = filename;
 	ui.label_filename->setText(QString::fromStdString(m_cv.filename));
+	playerState = QMediaPlayer::StoppedState;
+	player->stop();
+	videoWidget->hide();
 }
 
 void CreateVideoWindow::InitialUI()
@@ -255,13 +264,13 @@ void CreateVideoWindow::slot_OnBtnPlayClicked()
 	{
 		player->play();
 		playerState = QMediaPlayer::PlayingState;
-		ui.btn_play->InitialStyleSheet(QPixmap(":/MusicVisualization/img/play.png"));
+		ui.btn_play->InitialStyleSheet(QPixmap(":/MusicVisualization/img/pause.png"));
 	}
 	else
 	{
 		player->pause();
 		playerState = QMediaPlayer::PausedState;
-		ui.btn_play->InitialStyleSheet(QPixmap(":/MusicVisualization/img/pause.png"));
+		ui.btn_play->InitialStyleSheet(QPixmap(":/MusicVisualization/img/play.png"));
 	}
 }
 

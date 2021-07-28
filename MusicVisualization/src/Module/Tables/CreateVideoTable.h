@@ -17,6 +17,7 @@ public:
 	DBStatus UpdateCreateVideo(CreateVideo new_Cr);
 	CreateVideo SelectCreateVideo(std::string filename);
 	CreateVideoVec SelectAllCreateVideos();
+
 private:
 	bool StringToBool(std::string str);
 	std::string BoolToString(bool b);

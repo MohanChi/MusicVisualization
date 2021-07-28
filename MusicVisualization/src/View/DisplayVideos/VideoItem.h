@@ -22,8 +22,10 @@ public:
 	VideoItem(DisplayVideosWindow * window, QWidget* parent = nullptr);
 	~VideoItem();
 
-	void SetVideoItemData(int row, QString UID, QString path);
+	void SetVideoItemData(int row, QString filename, QString path);
 	void SetUnSelectedUI();
+	QString GetFilename();
+	QString GetVideoPath();
 
 private:
 	void mousePressEvent(QMouseEvent * event);
@@ -32,4 +34,6 @@ private:
 	Ui::VideoItem ui;
 	DisplayVideosWindow * window;
 	int row;
+	QString filename;
+	QString path;
 };

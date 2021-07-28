@@ -3,6 +3,7 @@
 #include "ThreeChoices/ThreeChoicesWindow.h"
 #include "Common/TopWindow.h"
 #include "CreateVideos/CreateVideoWindow.h"
+#include "../Model/VideoDataModel.h"
 #include <iostream>
 #include <iomanip>
 #include <qlistwidget.h>
@@ -14,6 +15,7 @@ DisplayVideosWindow* DisplayVideosWindow::m_dvWindow = nullptr;
 DisplayVideosWindow::DisplayVideosWindow(QWidget * parent) : QWidget(parent)
 {
 	ui.setupUi(this);
+	chooseFilename = "";
 
 	QObject::connect(ui.btn_back, SIGNAL(clicked()), this, SLOT(slot_OnBtnBackClicked()));
 	QObject::connect(ui.btn_play, SIGNAL(clicked()), this, SLOT(slot_OnBtnPlayClicked()));
@@ -51,6 +53,7 @@ void DisplayVideosWindow::InitializeUI()
 	ui.horizontalSlider->setSingleStep(1);
 	ui.btn_back->InitialStyleSheet(QPixmap(":/MusicVisualization/img/circle_goback.png"));
 	ui.btn_play->InitialStyleSheet(QPixmap(":/MusicVisualization/img/play.png"));
+	ui.btn_modify->InitialStyleSheet(QPixmap(":/MusicVisualization/img/Modify.png"));
 
 	QObject::connect(player, SIGNAL(durationChanged(qint64)), this, SLOT(slot_DurationChanged(qint64)));
 	QObject::connect(player, SIGNAL(positionChanged(qint64)), this, SLOT(slot_PositionChanged(qint64)));
@@ -58,15 +61,16 @@ void DisplayVideosWindow::InitializeUI()
 
 void DisplayVideosWindow::SetVideoList()
 {
-	QString UID = "112233";
-	QString path = "F:\\MIProject\\1.mp4";
-	totalSize = 5;
+	VideoDataModel vdModel;
+	CompletedVideoVec cvVec = vdModel.GetAllCreateVideos();
+	totalSize = cvVec.size();
 	for (int i = 0; i < totalSize; i++)
 	{
 		VideoItem* mitem = new VideoItem(this); //input this window
 		QListWidgetItem *item = new QListWidgetItem();
 		item->setSizeHint(QSize(0, mitem->height()));
-		mitem->SetVideoItemData(i, UID, path);
+		mitem->SetVideoItemData(i, QString::fromStdString(cvVec[i].filename), 
+			QString::fromStdString(cvVec[i].videoPath));
 		ui.listWidget->addItem(item);
 		ui.listWidget->setItemWidget(item, mitem);
 	}
@@ -78,22 +82,30 @@ void DisplayVideosWindow::slot_OnBtnPlayClicked()
 	{
 		player->play();
 		playerState = QMediaPlayer::PlayingState;
+		ui.btn_play->InitialStyleSheet(QPixmap(":/MusicVisualization/img/pause.png"));
 	}
 	else
 	{
 		player->pause();
 		playerState = QMediaPlayer::PausedState;
+		ui.btn_play->InitialStyleSheet(QPixmap(":/MusicVisualization/img/play.png"));
 	}
 }
 
 void DisplayVideosWindow::slot_OnBtnModifyClicked()
 {
-	/*this->setParent(nullptr);
+	if (chooseFilename == "")
+	{
+		return;
+	}
+	this->setParent(nullptr);
 	this->hide();
-	CreateVideoWindow* cvWindow = CreateVideoWindow::GetInstance();
 	TopWindow* tWindow = TopWindow::GetInstance();
+	CreateVideoWindow* cvWindow = CreateVideoWindow::GetInstance(tWindow->GetWidgetContainer());
+	CreateDataModel cdModel;
+	cvWindow->SetInitialData(cdModel.GetCreateVideo(chooseFilename));
 	cvWindow->setParent(tWindow->GetWidgetContainer());
-	cvWindow->show();*/
+	cvWindow->show();
 }
 
 void DisplayVideosWindow::slot_DurationChanged(qint64 playtime)
@@ -160,11 +172,12 @@ void DisplayVideosWindow::OnBtnItemSelected(int row)
 		}
 	}
 
-	player->setMedia(QUrl::fromLocalFile("F:\\MIProject\\1.mp4"));
+	player->setMedia(QUrl::fromLocalFile(item->GetVideoPath()));
 	videoWidget->show();
 	playerState = QMediaPlayer::StoppedState;
 	sliderValue = 0;
 	//player->play();
+	chooseFilename = item->GetFilename().toStdString();
 }
 
 void DisplayVideosWindow::slot_OnBtnBackClicked()

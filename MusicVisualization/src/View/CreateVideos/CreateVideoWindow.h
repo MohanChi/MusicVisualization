@@ -37,6 +37,7 @@ private slots:
 	void slot_OnBtnSaveClicked();
 	void slot_OnBtnUploadMusicClicked();
 	void slot_OnBtnPlayClicked();
+	void slot_OnBtnCompletedClicked();
 	void slot_StyleComboBox(const QString & text);
 
 	void slot_SliderSpeedFpm(int value);
@@ -78,8 +79,9 @@ private:
 	ReminderWidget * rWidget;
 	WaitingLoadingWindow *wlWindow;
 	QTimer * timer;
-	bool threadEnd;
-	bool generationEnd;
+	bool isThreadEnd;
+	bool isGenerationEnd;
+	bool isGenerated;
 
 	QMediaPlayer *player;
 	QVideoWidget *videoWidget;

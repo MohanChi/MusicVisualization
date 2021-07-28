@@ -44,6 +44,7 @@ private:
 	int totalTime;
 	int sliderValue;
 	int totalSize;
+	std::string chooseFilename;
 
 	static DisplayVideosWindow * m_dvWindow;
 };

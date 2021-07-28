@@ -1,4 +1,5 @@
-﻿  rcc MusicVisualization.qrc
-  CreateVideoWindow.cpp
-  qrc_MusicVisualization.cpp
+﻿  moc src\View\DisplayVideos\VideoItem.h
+  DisplayVideosWindow.cpp
+  VideoItem.cpp
+  moc_VideoItem.cpp
   MusicVisualization.vcxproj -> F:\MIProject\MusicVisualization\x64\Debug\MusicVisualization.exe

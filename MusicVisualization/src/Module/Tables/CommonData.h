@@ -5,11 +5,6 @@
 #define getVideoURL "http://127.0.0.1:5000/VideoReturn"
 #include <string>
 
-struct CompletedVideo
-{
-
-};
-
 struct CreateVideo
 {
 	std::string filename;
@@ -31,4 +26,10 @@ struct CreateVideo
 	int resolution = 360;
 	int start = 0;
 	int fps = 43;
+};
+
+struct CompletedVideo
+{
+	std::string filename;
+	std::string videoPath;
 };

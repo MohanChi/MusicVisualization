@@ -2,6 +2,7 @@
 #include "Common/TopWindow.h"
 #include "ThreeChoices/ThreeChoicesWindow.h"
 #include "../Controller/CreateVideoControl.h"
+#include "../Model/VideoDataModel.h"
 #include <QFileDialog>
 #include <QString>
 #include <qpixmap.h>
@@ -17,8 +18,9 @@ CreateVideoWindow::CreateVideoWindow(QWidget *parent)
 	ui.setupUi(this);
 	timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(slot_TimeOut()));
-	threadEnd = false;
-	generationEnd = false;
+	isThreadEnd = false;
+	isGenerationEnd = false;
+	isGenerated = false;
 
 	QObject::connect(ui.btn_back, SIGNAL(clicked()), this, SLOT(slot_OnBtnBackClicked()));
 	QObject::connect(ui.btn_generate, SIGNAL(clicked()), this, SLOT(slot_OnBtnGenerateClicked()));
@@ -27,6 +29,7 @@ CreateVideoWindow::CreateVideoWindow(QWidget *parent)
 		this, SLOT(slot_StyleComboBox(const QString)));
 	QObject::connect(ui.btn_play, SIGNAL(clicked()), this, SLOT(slot_OnBtnPlayClicked()));
 	QObject::connect(ui.btn_save, SIGNAL(clicked()), this, SLOT(slot_OnBtnSaveClicked()));
+	QObject::connect(ui.btn_completed, SIGNAL(clicked()), this, SLOT(slot_OnBtnCompletedClicked()));
 
 	QObject::connect(ui.hs_speed_fpm, SIGNAL(valueChanged(int)), this,
 		SLOT(slot_SliderSpeedFpm(int)));
@@ -160,6 +163,7 @@ void CreateVideoWindow::SetInitialData(CreateVideo cv)
 	playerState = QMediaPlayer::StoppedState;
 	player->stop();
 	videoWidget->hide();
+	isGenerated = false;
 }
 
 void CreateVideoWindow::SetFileName(std::string filename)
@@ -169,6 +173,7 @@ void CreateVideoWindow::SetFileName(std::string filename)
 	playerState = QMediaPlayer::StoppedState;
 	player->stop();
 	videoWidget->hide();
+	isGenerated = false;
 }
 
 void CreateVideoWindow::InitialUI()
@@ -195,7 +200,7 @@ void CreateVideoWindow::AskServerForVideo()
 	CreateVideoControl cvControl;
 	if (cvControl.SendMusicToServer(m_cv) != 0)
 	{
-		threadEnd = true;
+		isThreadEnd = true;
 		rWidget->SetLabelText("Generation failed, please try again");
 		rWidget->show();
 	}
@@ -203,12 +208,13 @@ void CreateVideoWindow::AskServerForVideo()
 	{
 		if (cvControl.GetVideoFromServer(m_cv) == 0)
 		{
-			threadEnd = true;
-			generationEnd = true;
+			isThreadEnd = true;
+			isGenerationEnd = true;
+			isGenerated = true;
 		}
 		else
 		{
-			threadEnd = true;
+			isThreadEnd = true;
 			rWidget->SetLabelText("Generation failed, please try again");
 			rWidget->show();
 		}
@@ -272,6 +278,26 @@ void CreateVideoWindow::slot_OnBtnPlayClicked()
 		playerState = QMediaPlayer::PausedState;
 		ui.btn_play->InitialStyleSheet(QPixmap(":/MusicVisualization/img/play.png"));
 	}
+}
+
+void CreateVideoWindow::slot_OnBtnCompletedClicked()
+{
+	if (isGenerated)
+	{
+		VideoDataModel vdModel;
+		CompletedVideo co;
+		co.filename = m_cv.filename;
+		co.videoPath = "AppData\\" + m_cv.filename + ".mp4";
+		vdModel.SaveCompletedVideo(co);
+		rWidget->SetLabelText("Save video successfully!");
+		rWidget->show();
+	}
+	else
+	{
+		rWidget->SetLabelText("You have not generated video,please generate first!");
+		rWidget->show();
+	}
+	
 }
 
 void CreateVideoWindow::slot_SliderSpeedFpm(int value)
@@ -452,11 +478,11 @@ void CreateVideoWindow::slot_StyleComboBox(const QString & text)
 
 void CreateVideoWindow::slot_TimeOut()
 {
-	if (threadEnd)
+	if (isThreadEnd)
 	{
 		wlWindow->hide();
 		timer->stop();
-		if (generationEnd)
+		if (isGenerationEnd)
 		{
 			playerState = QMediaPlayer::StoppedState;
 			player->stop();
@@ -465,9 +491,9 @@ void CreateVideoWindow::slot_TimeOut()
 			videoWidget->show();
 			sliderValue = 0;
 			//player->play();
-			generationEnd = false;
+			isGenerationEnd = false;
 		}
-		threadEnd = false;
+		isThreadEnd = false;
 	}
 	else if (wlWindow->GetIsCancelled())
 	{

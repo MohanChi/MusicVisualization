@@ -20,5 +20,6 @@
         <file>img/caret_down.png</file>
         <file>img/MusicVisualization.png</file>
         <file>img/save.png</file>
+        <file>img/Modify.png</file>
     </qresource>
 </RCC>

@@ -41,11 +41,13 @@ public:
         btn_OK->setIconSize(QSize(100, 40));
         label = new QLabel(widget_background);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(70, 20, 241, 81));
+        label->setGeometry(QRect(70, 40, 241, 81));
         QFont font;
         font.setFamily(QString::fromUtf8("Times New Roman"));
         font.setPointSize(11);
         label->setFont(font);
+        label->setAlignment(Qt::AlignCenter);
+        label->setWordWrap(false);
 
         retranslateUi(ReminderWidget);
 

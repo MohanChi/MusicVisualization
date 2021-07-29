@@ -11,6 +11,7 @@ public:
 	CreateVideoVec GetAllCreateVideos();
 	CreateVideo GetCreateVideo(std::string filename);
 	void UpdateCreateVideosData(CreateVideo cv);
+	void DeleteCreateVideoData(std::string filename);
 
 private:
 

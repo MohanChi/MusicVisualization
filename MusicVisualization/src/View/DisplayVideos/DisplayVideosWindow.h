@@ -32,6 +32,7 @@ private slots:
 	void slot_OnBtnBackClicked();
 	void slot_OnBtnPlayClicked();
 	void slot_OnBtnModifyClicked();
+	void slot_OnBtnDeleteClicked();
 	void slot_DurationChanged(qint64 playtime);
 	void slot_PositionChanged(qint64 playtime);
 	void slot_SliderValueChanged(int value);

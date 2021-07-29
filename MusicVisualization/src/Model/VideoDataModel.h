@@ -10,6 +10,7 @@ public:
 	void SaveCompletedVideo(CompletedVideo);
 	CompletedVideoVec GetAllCreateVideos();
 	CompletedVideo GetCreateVideo(std::string filename);
+	void DeleteCompeletdVideo(std::string filename);
 
 private:
 

@@ -22,6 +22,7 @@ DisplayVideosWindow::DisplayVideosWindow(QWidget * parent) : QWidget(parent)
 	QObject::connect(ui.btn_modify, SIGNAL(clicked()), this, SLOT(slot_OnBtnModifyClicked()));
 	QObject::connect(ui.horizontalSlider, SIGNAL(valueChanged(int)),
 		this, SLOT(slot_SliderValueChanged(int)));
+	QObject::connect(ui.btn_delete, SIGNAL(clicked()), this, SLOT(slot_OnBtnDeleteClicked()));
 
 	InitializeUI();
 }
@@ -54,6 +55,7 @@ void DisplayVideosWindow::InitializeUI()
 	ui.btn_back->InitialStyleSheet(QPixmap(":/MusicVisualization/img/circle_goback.png"));
 	ui.btn_play->InitialStyleSheet(QPixmap(":/MusicVisualization/img/play.png"));
 	ui.btn_modify->InitialStyleSheet(QPixmap(":/MusicVisualization/img/Modify.png"));
+	ui.btn_delete->InitialStyleSheet(QPixmap(":/MusicVisualization/img/delete.png"));
 
 	QObject::connect(player, SIGNAL(durationChanged(qint64)), this, SLOT(slot_DurationChanged(qint64)));
 	QObject::connect(player, SIGNAL(positionChanged(qint64)), this, SLOT(slot_PositionChanged(qint64)));
@@ -106,6 +108,17 @@ void DisplayVideosWindow::slot_OnBtnModifyClicked()
 	cvWindow->SetInitialData(cdModel.GetCreateVideo(chooseFilename));
 	cvWindow->setParent(tWindow->GetWidgetContainer());
 	cvWindow->show();
+}
+
+void DisplayVideosWindow::slot_OnBtnDeleteClicked()
+{
+	if (chooseFilename == "")
+	{
+		return;
+	}
+	VideoDataModel vdModel;
+	vdModel.DeleteCompeletdVideo(chooseFilename);
+	UpdateVideoListAndInitialUI();
 }
 
 void DisplayVideosWindow::slot_DurationChanged(qint64 playtime)
@@ -164,6 +177,12 @@ void DisplayVideosWindow::OnBtnItemSelected(int row)
 		if (i == row)
 		{
 			item = (VideoItem*)ui.listWidget->itemWidget(ui.listWidget->item(i));
+			player->setMedia(QUrl::fromLocalFile(item->GetVideoPath()));
+			videoWidget->show();
+			playerState = QMediaPlayer::StoppedState;
+			sliderValue = 0;
+			//player->play();
+			chooseFilename = item->GetFilename().toStdString();
 		}
 		else
 		{
@@ -171,13 +190,6 @@ void DisplayVideosWindow::OnBtnItemSelected(int row)
 			item->SetUnSelectedUI();
 		}
 	}
-
-	player->setMedia(QUrl::fromLocalFile(item->GetVideoPath()));
-	videoWidget->show();
-	playerState = QMediaPlayer::StoppedState;
-	sliderValue = 0;
-	//player->play();
-	chooseFilename = item->GetFilename().toStdString();
 }
 
 void DisplayVideosWindow::slot_OnBtnBackClicked()

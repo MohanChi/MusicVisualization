@@ -21,5 +21,6 @@
         <file>img/MusicVisualization.png</file>
         <file>img/save.png</file>
         <file>img/Modify.png</file>
+        <file>img/delete.png</file>
     </qresource>
 </RCC>

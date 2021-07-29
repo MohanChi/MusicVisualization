@@ -3,6 +3,7 @@
 #include "Common/TopWindow.h"
 #include "UnfinishedItem.h"
 #include "../Model/CreateDataModel.h"
+#include "../Model/VideoDataModel.h"
 #include "CreateVideos/CreateVideoWindow.h"
 
 ContinueChooseWindow* ContinueChooseWindow::m_ccWindow = nullptr;
@@ -12,11 +13,11 @@ ContinueChooseWindow::ContinueChooseWindow(QWidget *parent)
 {
 	ui.setupUi(this);
 	InitializeUI();
-	SetInitializeItem();
 	chooseFilename = "";
 
 	QObject::connect(ui.btn_back, SIGNAL(clicked()), this, SLOT(slot_OnBtnBackClicked()));
 	QObject::connect(ui.btn_OK, SIGNAL(clicked()), this, SLOT(slot_OnBtnOKClicked()));
+	QObject::connect(ui.btn_delete, SIGNAL(clicked()), this, SLOT(slot_OnBtnDeleteClicked()));
 }
 
 ContinueChooseWindow::~ContinueChooseWindow()
@@ -27,10 +28,12 @@ void ContinueChooseWindow::InitializeUI()
 {
 	ui.btn_OK->InitialStyleSheet(QPixmap(":/MusicVisualization/img/OK.png"));
 	ui.btn_back->InitialStyleSheet(QPixmap(":/MusicVisualization/img/circle_goback.png"));
+	ui.btn_delete->InitialStyleSheet(QPixmap(":/MusicVisualization/img/delete.png"));
 }
 
 void ContinueChooseWindow::SetInitializeItem()
 {
+	ui.listWidget->clear();
 	CreateDataModel cdModel;
 	std::vector<CreateVideo> cvVec = cdModel.GetAllCreateVideos();
 	totalSize = cvVec.size();
@@ -78,6 +81,19 @@ void ContinueChooseWindow::slot_OnBtnOKClicked()
 	cvWindow->SetInitialData(cdModel.GetCreateVideo(chooseFilename));
 	cvWindow->setParent(tWindow->GetWidgetContainer());
 	cvWindow->show();
+}
+
+void ContinueChooseWindow::slot_OnBtnDeleteClicked()
+{
+	if (chooseFilename == "")
+	{
+		return;
+	}
+	CreateDataModel cdModel;
+	cdModel.DeleteCreateVideoData(chooseFilename);
+	VideoDataModel vdModel;
+	vdModel.DeleteCompeletdVideo(chooseFilename);
+	SetInitializeItem();
 }
 
 void ContinueChooseWindow::slot_OnBtnBackClicked()

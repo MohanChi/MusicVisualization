@@ -25,3 +25,9 @@ CompletedVideo VideoDataModel::GetCreateVideo(std::string filename)
 	CompletedVideoTable cvTable;
 	return cvTable.SelectCompleteVideo(filename);
 }
+
+void VideoDataModel::DeleteCompeletdVideo(std::string filename)
+{
+	CompletedVideoTable cvTable;
+	cvTable.DeleteCompleteVideo(filename);
+}

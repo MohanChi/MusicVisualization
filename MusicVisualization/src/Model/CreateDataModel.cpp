@@ -38,3 +38,9 @@ void CreateDataModel::UpdateCreateVideosData(CreateVideo cv)
 	CreateVideoTable cvt;
 	cvt.UpdateCreateVideo(cv);
 }
+
+void CreateDataModel::DeleteCreateVideoData(std::string filename)
+{
+	CreateVideoTable cvt;
+	cvt.DeleteCreateVideo(filename);
+}

@@ -28,6 +28,7 @@ public:
 private slots:
 	void slot_OnBtnBackClicked();
 	void slot_OnBtnOKClicked();
+	void slot_OnBtnDeleteClicked();
 
 private:
 	Ui::ContinueChooseWindow ui;

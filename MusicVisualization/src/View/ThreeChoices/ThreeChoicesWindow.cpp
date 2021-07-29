@@ -58,6 +58,7 @@ void ThreeChoicesWindow::slot_OnBtnContinueClicked()
 	ContinueChooseWindow * ccWindow = ContinueChooseWindow::GetInstance();
 	TopWindow * tWindow = TopWindow::GetInstance();
 	ccWindow->setParent(tWindow->GetWidgetContainer());
+	ccWindow->SetInitializeItem();
 	ccWindow->show();
 }
 

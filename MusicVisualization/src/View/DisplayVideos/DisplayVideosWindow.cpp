@@ -23,7 +23,6 @@ DisplayVideosWindow::DisplayVideosWindow(QWidget * parent) : QWidget(parent)
 	QObject::connect(ui.horizontalSlider, SIGNAL(valueChanged(int)),
 		this, SLOT(slot_SliderValueChanged(int)));
 	QObject::connect(ui.btn_delete, SIGNAL(clicked()), this, SLOT(slot_OnBtnDeleteClicked()));
-
 	InitializeUI();
 }
 
@@ -52,6 +51,9 @@ void DisplayVideosWindow::InitializeUI()
 	ui.verticalLayout->addWidget(videoWidget);
 	player->setVideoOutput(videoWidget);
 	ui.horizontalSlider->setSingleStep(1);
+
+	rWidget = new ReminderWidget(this);
+	rWidget->hide();
 	ui.btn_back->InitialStyleSheet(QPixmap(":/MusicVisualization/img/circle_goback.png"));
 	ui.btn_play->InitialStyleSheet(QPixmap(":/MusicVisualization/img/play.png"));
 	ui.btn_modify->InitialStyleSheet(QPixmap(":/MusicVisualization/img/Modify.png"));
@@ -98,6 +100,8 @@ void DisplayVideosWindow::slot_OnBtnModifyClicked()
 {
 	if (chooseFilename == "")
 	{
+		rWidget->SetLabelText("Please select a project!");
+		rWidget->show();
 		return;
 	}
 	this->setParent(nullptr);
@@ -114,6 +118,8 @@ void DisplayVideosWindow::slot_OnBtnDeleteClicked()
 {
 	if (chooseFilename == "")
 	{
+		rWidget->SetLabelText("Please select a project!");
+		rWidget->show();
 		return;
 	}
 	VideoDataModel vdModel;

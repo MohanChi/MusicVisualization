@@ -26,6 +26,8 @@ ContinueChooseWindow::~ContinueChooseWindow()
 
 void ContinueChooseWindow::InitializeUI()
 {
+	rWidget = new ReminderWidget(this);
+	rWidget->hide();
 	ui.btn_OK->InitialStyleSheet(QPixmap(":/MusicVisualization/img/OK.png"));
 	ui.btn_back->InitialStyleSheet(QPixmap(":/MusicVisualization/img/circle_goback.png"));
 	ui.btn_delete->InitialStyleSheet(QPixmap(":/MusicVisualization/img/delete.png"));
@@ -71,6 +73,8 @@ void ContinueChooseWindow::slot_OnBtnOKClicked()
 {
 	if (chooseFilename == "")
 	{
+		rWidget->SetLabelText("Please select a project!");
+		rWidget->show();
 		return;
 	}
 	this->setParent(nullptr);
@@ -87,6 +91,8 @@ void ContinueChooseWindow::slot_OnBtnDeleteClicked()
 {
 	if (chooseFilename == "")
 	{
+		rWidget->SetLabelText("Please select a project!");
+		rWidget->show();
 		return;
 	}
 	CreateDataModel cdModel;

@@ -3,6 +3,7 @@
 #include <QWidget>
 #include <QtMultimedia/qmediaplayer.h>
 #include <QtMultimediaWidgets/qvideowidget.h>
+#include "../CreateVideos/ReminderWidget.h"
 #include "ui_DisplayVideosWindow.h"
 
 class DisplayVideosWindow : public QWidget
@@ -46,6 +47,7 @@ private:
 	int sliderValue;
 	int totalSize;
 	std::string chooseFilename;
+	ReminderWidget * rWidget;
 
 	static DisplayVideosWindow * m_dvWindow;
 };

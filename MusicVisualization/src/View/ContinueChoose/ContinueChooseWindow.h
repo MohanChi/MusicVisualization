@@ -2,6 +2,7 @@
 
 #include <QWidget>
 #include "ui_ContinueChooseWindow.h"
+#include "../CreateVideos/ReminderWidget.h"
 
 class ContinueChooseWindow : public QWidget
 {
@@ -34,5 +35,7 @@ private:
 	Ui::ContinueChooseWindow ui;
 	int totalSize;
 	std::string chooseFilename;
+	ReminderWidget * rWidget;
+
 	static ContinueChooseWindow* m_ccWindow;
 };

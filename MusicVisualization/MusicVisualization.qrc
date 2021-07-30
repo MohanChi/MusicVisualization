@@ -22,5 +22,6 @@
         <file>img/save.png</file>
         <file>img/Modify.png</file>
         <file>img/delete.png</file>
+        <file>img/reminder-bg.png</file>
     </qresource>
 </RCC>

@@ -226,6 +226,12 @@ void CreateVideoWindow::slot_OnBtnGenerateClicked()
 	CreateDataModel cdm;
 	cdm.UpdateCreateVideosData(m_cv);
 	CreateVideoControl cvControl;
+	if (m_cv.musicname == "")
+	{
+		rWidget->SetLabelText("You should upload music first!");
+		rWidget->show();
+		return;
+	}
 	if (cvControl.SendMusicParametersToServer(m_cv) == 0)
 	{
 		TopWindow* tWindow = TopWindow::GetInstance();
@@ -482,8 +488,13 @@ void CreateVideoWindow::slot_TimeOut()
 	{
 		wlWindow->hide();
 		timer->stop();
+		isThreadEnd = false;
 		if (isGenerationEnd)
 		{
+
+			isGenerationEnd = false;
+			rWidget->SetLabelText("Generated successfully!");
+			rWidget->show();
 			playerState = QMediaPlayer::StoppedState;
 			player->stop();
 			std::string videoPath = "AppData\\" + m_cv.filename + ".mp4";
@@ -491,9 +502,7 @@ void CreateVideoWindow::slot_TimeOut()
 			videoWidget->show();
 			sliderValue = 0;
 			//player->play();
-			isGenerationEnd = false;
 		}
-		isThreadEnd = false;
 	}
 	else if (wlWindow->GetIsCancelled())
 	{

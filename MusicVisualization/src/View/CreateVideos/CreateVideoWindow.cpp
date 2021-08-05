@@ -193,6 +193,24 @@ void CreateVideoWindow::InitialUI()
 	ui.horizontalSlider->setSingleStep(1);
 	QObject::connect(player, SIGNAL(durationChanged(qint64)), this, SLOT(slot_DurationChanged(qint64)));
 	QObject::connect(player, SIGNAL(positionChanged(qint64)), this, SLOT(slot_PositionChanged(qint64)));
+
+	//complex mode
+	//ui.btn_initialization->InitialStyleSheet(QPixmap(":/MusicVisualization/img/Initialization.png"));
+	//ui.btn_pulse->InitialStyleSheet(QPixmap(":/MusicVisualization/img/Pulse.png"));
+	//ui.btn_motion->InitialStyleSheet(QPixmap(":/MusicVisualization/img/Motion.png"));
+	//ui.btn_class->InitialStyleSheet(QPixmap(":/MusicVisualization/img/Class.png"));
+	//ui.btn_effects->InitialStyleSheet(QPixmap(":/MusicVisualization/img/Effects.png"));
+	//ui.btn_video->InitialStyleSheet(QPixmap(":/MusicVisualization/img/Video.png"));
+	//ui.btn_other->InitialStyleSheet(QPixmap(":/MusicVisualization/img/Other.png"));
+		
+	ui.btn_initialization->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
+	ui.btn_pulse->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
+	ui.btn_motion->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
+	ui.btn_class->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
+	ui.btn_effects->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
+	ui.btn_video->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
+	ui.btn_other->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
+	ui.widget_classify->hide();
 }
 
 void CreateVideoWindow::AskServerForVideo()
@@ -493,8 +511,8 @@ void CreateVideoWindow::slot_TimeOut()
 		{
 
 			isGenerationEnd = false;
-			rWidget->SetLabelText("Generated successfully!");
-			rWidget->show();
+			//rWidget->SetLabelText("Generated successfully!");
+			//rWidget->show();
 			playerState = QMediaPlayer::StoppedState;
 			player->stop();
 			std::string videoPath = "AppData\\" + m_cv.filename + ".mp4";

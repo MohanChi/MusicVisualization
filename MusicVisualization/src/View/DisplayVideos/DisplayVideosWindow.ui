@@ -213,6 +213,22 @@ margin-bottom:7px;
      </size>
     </property>
    </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>388</x>
+      <y>57</y>
+      <width>605</width>
+      <height>376</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(73, 80, 87);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <zorder>widget</zorder>
   <zorder>verticalLayoutWidget</zorder>

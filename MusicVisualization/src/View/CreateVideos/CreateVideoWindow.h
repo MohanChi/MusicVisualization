@@ -73,6 +73,7 @@ private slots:
 	void slot_PositionChanged(qint64 playtime);
 	void slot_SliderValueChanged(int value);
 
+	void slot_In_OnBtnPulse();
 private:
 	Ui::CreateVideoWindow ui;
 	CreateVideo m_cv;

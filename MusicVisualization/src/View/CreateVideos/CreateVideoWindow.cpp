@@ -164,6 +164,9 @@ void CreateVideoWindow::SetInitialData(CreateVideo cv)
 	player->stop();
 	videoWidget->hide();
 	isGenerated = false;
+
+	player->setMedia(QUrl::fromLocalFile("F:\\MIProject\\1.mp4"));
+	videoWidget->show();
 }
 
 void CreateVideoWindow::SetFileName(std::string filename)
@@ -203,14 +206,16 @@ void CreateVideoWindow::InitialUI()
 	//ui.btn_video->InitialStyleSheet(QPixmap(":/MusicVisualization/img/Video.png"));
 	//ui.btn_other->InitialStyleSheet(QPixmap(":/MusicVisualization/img/Other.png"));
 		
-	ui.btn_initialization->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
-	ui.btn_pulse->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
-	ui.btn_motion->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
-	ui.btn_class->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
-	ui.btn_effects->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
-	ui.btn_video->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
-	ui.btn_other->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
-	ui.widget_classify->hide();
+	//ui.btn_initialization->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
+	//ui.btn_pulse->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
+	//ui.btn_motion->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
+	//ui.btn_class->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
+	//ui.btn_effects->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
+	//ui.btn_video->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
+	//ui.btn_other->InitialStyleSheet(QPixmap(":/MusicVisualization/img/150-50 add.png"));
+	//ui.widget_classify->hide();
+	//ui.in_btn_upload_pulse_audio->InitialStyleSheet(QPixmap(":/MusicVisualization/img/upload.png"));
+	//ui.widget_pulse->hide();
 }
 
 void CreateVideoWindow::AskServerForVideo()
@@ -578,6 +583,12 @@ void CreateVideoWindow::slot_SliderValueChanged(int value)
 		sliderValue = value;
 		player->setPosition(value * 1000);
 	}
+}
+
+void CreateVideoWindow::slot_In_OnBtnPulse()
+{
+	//ui.widget_classify->hide();
+	//ui.widget_pulse->show();
 }
 
 void CreateVideoWindow::slot_OnBtnBackClicked()

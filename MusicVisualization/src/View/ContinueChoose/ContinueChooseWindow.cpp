@@ -100,6 +100,8 @@ void ContinueChooseWindow::slot_OnBtnDeleteClicked()
 	VideoDataModel vdModel;
 	vdModel.DeleteCompeletdVideo(chooseFilename);
 	SetInitializeItem();
+	rWidget->SetLabelText("Delete successfully!");
+	rWidget->show();
 }
 
 void ContinueChooseWindow::slot_OnBtnBackClicked()

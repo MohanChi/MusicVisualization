@@ -165,8 +165,8 @@ void CreateVideoWindow::SetInitialData(CreateVideo cv)
 	videoWidget->hide();
 	isGenerated = false;
 
-	player->setMedia(QUrl::fromLocalFile("F:\\MIProject\\1.mp4"));
-	videoWidget->show();
+	//player->setMedia(QUrl::fromLocalFile("F:\\MIProject\\1.mp4"));
+	//videoWidget->show();
 }
 
 void CreateVideoWindow::SetFileName(std::string filename)

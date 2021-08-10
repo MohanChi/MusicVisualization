@@ -125,6 +125,8 @@ void DisplayVideosWindow::slot_OnBtnDeleteClicked()
 	VideoDataModel vdModel;
 	vdModel.DeleteCompeletdVideo(chooseFilename);
 	UpdateVideoListAndInitialUI();
+	rWidget->SetLabelText("Delete successfully!");
+	rWidget->show();
 }
 
 void DisplayVideosWindow::slot_DurationChanged(qint64 playtime)

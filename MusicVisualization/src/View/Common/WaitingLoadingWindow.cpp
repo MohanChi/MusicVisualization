@@ -30,7 +30,7 @@ bool WaitingLoadingWindow::GetIsCancelled()
 void WaitingLoadingWindow::paintEvent(QPaintEvent * event)
 {
 	QPainter painter(this);
-	painter.setRenderHint(QPainter::Antialiasing, true);//…Ë÷√‘≤ª¨ªÊ÷∆∑Á∏Ò£®øπæ‚≥›£©
+	painter.setRenderHint(QPainter::Antialiasing, true);
 	QRect drawRect(759, 339, 350, 350);
 	int radius = 150;
 	int arcHeight = 30;

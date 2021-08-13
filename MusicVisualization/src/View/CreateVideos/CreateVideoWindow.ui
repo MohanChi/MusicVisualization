@@ -526,97 +526,17 @@
     </property>
     <item>
      <property name="text">
-      <string>butterflies</string>
+      <string>WikiArt</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>anime faces</string>
+      <string>modern_art</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>fursona</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>faces</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>trypophobia</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>abstract art</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>textures</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>ffhq faces</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>grumpy cat</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>pokemon</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>modern art</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>cakes</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>maps</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>microscope images</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>fireworks</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>panda</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>lsun cats</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>vases</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>wikiart faces</string>
+      <string>abstract_photo</string>
      </property>
     </item>
     <item>
@@ -626,72 +546,12 @@
     </item>
     <item>
      <property name="text">
-      <string>wikiart</string>
+      <string>church</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>anime portraits</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>wildlife</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>flowers</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>doors</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>imagenet</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>lsun bedrooms</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>abstract photos</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>beetles</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>ukiyoe faces</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>floor plans</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>figure drawings</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>my little pony</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>lsun cars</string>
+      <string>face</string>
      </property>
     </item>
     <item>
@@ -701,7 +561,7 @@
     </item>
     <item>
      <property name="text">
-      <string>obama</string>
+      <string>pokemon</string>
      </property>
     </item>
    </widget>
@@ -906,9 +766,6 @@
      <font>
       <family>Arial</family>
      </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
     </property>
     <property name="decimals">
      <number>1</number>
@@ -1131,39 +988,6 @@
     </property>
     <property name="text">
      <string>12</string>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="dsb_speed_fpm">
-    <property name="geometry">
-     <rect>
-      <x>325</x>
-      <y>120</y>
-      <width>51</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial</family>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="decimals">
-     <number>0</number>
-    </property>
-    <property name="maximum">
-     <double>12.000000000000000</double>
-    </property>
-    <property name="singleStep">
-     <double>1.000000000000000</double>
-    </property>
-    <property name="stepType">
-     <enum>QAbstractSpinBox::DefaultStepType</enum>
-    </property>
-    <property name="value">
-     <double>12.000000000000000</double>
     </property>
    </widget>
    <widget class="QLabel" name="label_31">
@@ -1856,6 +1680,27 @@
      <string/>
     </property>
    </widget>
+   <widget class="QSpinBox" name="sb_speed_fpm">
+    <property name="geometry">
+     <rect>
+      <x>325</x>
+      <y>120</y>
+      <width>51</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+     </font>
+    </property>
+    <property name="maximum">
+     <number>12</number>
+    </property>
+    <property name="value">
+     <number>12</number>
+    </property>
+   </widget>
    <zorder>label_23</zorder>
    <zorder>btn_back</zorder>
    <zorder>verticalLayoutWidget</zorder>
@@ -1891,7 +1736,6 @@
    <zorder>hs_speed_fpm</zorder>
    <zorder>label_14</zorder>
    <zorder>label_15</zorder>
-   <zorder>dsb_speed_fpm</zorder>
    <zorder>label_31</zorder>
    <zorder>btn_save</zorder>
    <zorder>cb_pulse_percussive</zorder>
@@ -1910,7 +1754,6 @@
    <zorder>dsb_flash_strength</zorder>
    <zorder>label_20</zorder>
    <zorder>hs_motion_randomness</zorder>
-   <zorder>dsb_motion_randomness</zorder>
    <zorder>cb_flash_percussive</zorder>
    <zorder>label_33</zorder>
    <zorder>sb_resolution</zorder>
@@ -1920,6 +1763,8 @@
    <zorder>sb_fps</zorder>
    <zorder>label_21</zorder>
    <zorder>label_22</zorder>
+   <zorder>sb_speed_fpm</zorder>
+   <zorder>dsb_motion_randomness</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

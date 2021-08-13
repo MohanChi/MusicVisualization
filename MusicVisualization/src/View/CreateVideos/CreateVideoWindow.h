@@ -48,7 +48,7 @@ private slots:
 	void slot_SliderClassPitchReact(int value);
 	void slot_SliderFlashStrength(int value);
 
-	void slot_DSBSpeedFpm(int value);
+	void slot_SBSpeedFpm(int value);
 	void slot_DSBPulseReact(double value);
 	void slot_DSBMotionReact(double value);
 	void slot_DSBMotionRandomness(double value);

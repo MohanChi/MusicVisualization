@@ -33,8 +33,8 @@ CreateVideoWindow::CreateVideoWindow(QWidget *parent)
 
 	QObject::connect(ui.hs_speed_fpm, SIGNAL(valueChanged(int)), this,
 		SLOT(slot_SliderSpeedFpm(int)));
-	QObject::connect(ui.dsb_speed_fpm, SIGNAL(valueChanged(double)), this,
-		SLOT(slot_DSBSpeedFpm(double)));
+	QObject::connect(ui.sb_speed_fpm, SIGNAL(valueChanged(int)), this,
+		SLOT(slot_SBSpeedFpm(int)));
 
 	QObject::connect(ui.hs_pulse_react, SIGNAL(valueChanged(int)), this,
 		SLOT(slot_SliderPulseReact(int)));
@@ -121,7 +121,7 @@ void CreateVideoWindow::SetInitialData(CreateVideo cv)
 	ui.label_filename->setText(QString::fromStdString(cv.filename));
 
 	ui.hs_speed_fpm->setValue(cv.speed_fpm);
-	ui.dsb_speed_fpm->setValue(cv.speed_fpm);
+	ui.sb_speed_fpm->setValue(cv.speed_fpm);
 
 	ui.hs_pulse_react->setValue(cv.pulse_react * 10);
 	ui.hs_motion_react->setValue(cv.motion_react * 10);
@@ -332,7 +332,7 @@ void CreateVideoWindow::slot_OnBtnCompletedClicked()
 void CreateVideoWindow::slot_SliderSpeedFpm(int value)
 {
 	m_cv.speed_fpm = value;
-	ui.dsb_speed_fpm->setValue(m_cv.speed_fpm);
+	ui.sb_speed_fpm->setValue(m_cv.speed_fpm);
 }
 
 void CreateVideoWindow::slot_SliderPulseReact(int value)
@@ -371,7 +371,7 @@ void CreateVideoWindow::slot_SliderFlashStrength(int value)
 	ui.dsb_flash_strength->setValue(m_cv.flash_strength);
 }
 
-void CreateVideoWindow::slot_DSBSpeedFpm(int value)
+void CreateVideoWindow::slot_SBSpeedFpm(int value)
 {
 	m_cv.speed_fpm = value;
 	ui.hs_speed_fpm->setValue(m_cv.speed_fpm);
